@@ -1,0 +1,2068 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fbf6ef">
+<title>A Little Corner for Anuja</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+    --bg:#fbf6ef;
+    --paper:#fffdf9;
+    --rose:#c98979;
+    --rose-light:#f7e7e0;
+    --green:#839982;
+    --green-light:#eaf0e7;
+    --brown:#57483e;
+    --muted:#97887c;
+    --border:#eee3d8;
+    --blue:#dce9f3;
+    --blue-dark:#52718b;
+    --shadow:0 12px 40px rgba(89,65,48,.07);
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html { scroll-behavior:smooth; }
+
+body {
+    background:
+      radial-gradient(ellipse at 5% 5%,#f8e8df,transparent 35%),
+      radial-gradient(ellipse at 95% 35%,#eaf0e5,transparent 35%),
+      var(--bg);
+    color:var(--brown);
+    font-family:'DM Sans',sans-serif;
+    line-height:1.7;
+    overflow-x:hidden;
+}
+
+button { font-family:inherit; cursor:pointer; }
+
+button:focus-visible {
+    outline:2px solid var(--rose);
+    outline-offset:4px;
+}
+
+.shell {
+    width:min(1000px,91%);
+    margin:auto;
+}
+
+.serif { font-family:'Playfair Display',serif; }
+.handwritten { font-family:'Caveat',cursive; }
+
+/* FLOATING FLOWERS */
+
+.petal {
+    position:fixed;
+    top:-30px;
+    z-index:10;
+    pointer-events:none;
+    opacity:.45;
+    animation:fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform:translateY(110vh) rotate(400deg);
+        opacity:0;
+    }
+}
+
+/* NAVIGATION */
+
+nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:23px 0;
+}
+
+.logo {
+    font-family:'Playfair Display',serif;
+    font-size:19px;
+}
+
+.logo span { color:var(--rose); }
+
+.nav-label {
+    color:var(--muted);
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+/* HERO */
+
+.hero {
+    text-align:center;
+    padding:80px 15px;
+}
+
+.hero h1 {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(43px,8vw,82px);
+    font-weight:400;
+    line-height:1.14;
+}
+
+.hero h1 em { color:var(--rose); }
+
+.hero-description {
+    max-width:470px;
+    margin:25px auto;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.eyebrow {
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:10px;
+    color:var(--rose);
+    margin-bottom:20px;
+}
+
+.hero-flower {
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.hero-buttons {
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+/* BUTTONS */
+
+.btn {
+    padding:13px 23px;
+    border-radius:40px;
+    border:none;
+    font-size:12px;
+    transition:.25s;
+}
+
+.btn:hover { transform:translateY(-3px); }
+
+.primary { background:var(--rose); color:white; }
+.secondary { background:white; color:var(--brown); border:1px solid var(--border); }
+.green-btn { background:var(--green); color:white; }
+.blue-btn { background:var(--blue-dark); color:white; }
+
+button:disabled { opacity:.5; cursor:not-allowed; }
+
+/* SECTIONS */
+
+.section {
+    margin:35px 0;
+    scroll-margin-top:25px;
+}
+
+.section-heading {
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.section-heading h2 {
+    font-family:'Playfair Display',serif;
+    font-weight:400;
+    font-size:clamp(25px,5vw,34px);
+}
+
+.section-heading p {
+    color:var(--muted);
+    font-size:12px;
+    margin-top:5px;
+}
+
+.card {
+    background:rgba(255,253,249,.92);
+    border:1px solid var(--border);
+    border-radius:23px;
+    padding:30px;
+    box-shadow:var(--shadow);
+}
+
+.icon { font-size:30px; margin-bottom:12px; }
+
+.card h3 {
+    font-family:'Playfair Display',serif;
+    font-size:22px;
+    font-weight:400;
+    margin-bottom:8px;
+}
+
+.card p { color:var(--muted); font-size:13px; }
+
+/* LETTER */
+
+.letter-card {
+    text-align:center;
+    padding:50px 25px;
+    background:linear-gradient(140deg,#fffaf5,#f8e9e2);
+}
+
+.letter-card .icon { font-size:42px; }
+
+.letter-card p {
+    max-width:480px;
+    margin:15px auto 25px;
+}
+
+/* FLOWER GARDEN */
+
+.flower-garden {
+    background:linear-gradient(140deg,#edf2e9,#f8f3eb);
+    text-align:center;
+}
+
+.flowers {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+    margin:30px 0;
+}
+
+.flower {
+    border:none;
+    background:transparent;
+    font-size:44px;
+    transition:.3s;
+}
+
+.flower:hover { transform:scale(1.3) rotate(15deg); }
+
+.flower-message {
+    font-family:'Caveat',cursive;
+    font-size:24px;
+    color:#718a70;
+    min-height:45px;
+}
+
+/* COMFORT MENU */
+
+.comfort-grid {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:13px;
+}
+
+.comfort-btn {
+    padding:22px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:17px;
+    text-align:left;
+    color:var(--brown);
+    transition:.2s;
+}
+
+.comfort-btn:hover {
+    background:var(--rose-light);
+    transform:translateY(-3px);
+}
+
+.comfort-btn strong {
+    display:block;
+    font-family:'Playfair Display',serif;
+    font-size:17px;
+    font-weight:400;
+}
+
+.comfort-btn small {
+    color:var(--muted);
+    font-size:11px;
+}
+
+.message-display {
+    margin-top:15px;
+    min-height:120px;
+    padding:25px;
+    border-radius:18px;
+    background:var(--green-light);
+    display:grid;
+    place-items:center;
+    text-align:center;
+}
+
+.message-display p {
+    font-family:'Playfair Display',serif;
+    color:#61765e;
+    font-size:19px;
+}
+
+/* NOTES */
+
+.notes-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.note {
+    min-height:180px;
+    padding:23px 18px;
+    border-radius:15px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    transition:.2s;
+}
+
+.note:hover { transform:translateY(-4px); }
+
+.note:nth-child(1) { background:#f6e8df; }
+.note:nth-child(2) { background:#eaf0e5; }
+.note:nth-child(3) { background:#f7f0df; }
+
+.note p {
+    font-family:'Caveat',cursive;
+    font-size:22px;
+    color:var(--brown);
+}
+
+.note small {
+    color:var(--muted);
+    font-size:9px;
+    letter-spacing:1px;
+}
+
+/* BROOKLYN 99 */
+
+.b99 {
+    background:linear-gradient(140deg,#e8f0f6,#f5f5ef);
+    border-color:#d6e2eb;
+}
+
+.b99-header {
+    text-align:center;
+    padding:10px 0 25px;
+}
+
+.badge {
+    display:inline-block;
+    background:#52718b;
+    color:white;
+    padding:6px 13px;
+    border-radius:20px;
+    font-size:9px;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.b99 h2 {
+    font-family:'Playfair Display',serif;
+    font-size:35px;
+    font-weight:400;
+    color:#425f79;
+}
+
+.b99-subtitle {
+    color:#71899d;
+    font-size:12px;
+    margin-top:5px;
+}
+
+.precinct-board {
+    background:rgba(255,255,255,.7);
+    border:1px solid #d9e3eb;
+    border-radius:16px;
+    padding:22px;
+    margin-top:15px;
+}
+
+.precinct-board h3 {
+    color:#52718b;
+    font-family:'Playfair Display',serif;
+    font-weight:400;
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.character-grid {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:15px;
+}
+
+.character {
+    background:white;
+    padding:16px 10px;
+    border-radius:13px;
+    text-align:center;
+    border:1px solid #e1e9ef;
+}
+
+.character .emoji { font-size:27px; }
+
+.character strong {
+    display:block;
+    font-size:12px;
+    margin:5px 0;
+    color:#425f79;
+}
+
+.character small {
+    color:#8493a0;
+    font-size:10px;
+}
+
+.detective-result {
+    background:#e6eef5;
+    color:#425f79;
+    border-radius:13px;
+    padding:18px;
+    text-align:center;
+    min-height:85px;
+    margin-top:15px;
+    font-family:'Playfair Display',serif;
+    font-size:17px;
+}
+
+.b99-fun {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:15px;
+}
+
+.b99-fun button {
+    padding:16px;
+    background:white;
+    border:1px solid #d9e3eb;
+    border-radius:13px;
+    color:#425f79;
+    text-align:left;
+}
+
+.b99-fun strong {
+    display:block;
+    font-size:13px;
+}
+
+.b99-fun small {
+    color:#8493a0;
+    font-size:10px;
+}
+
+/* TEN THINGS SECTION */
+
+.ten-things {
+    background:linear-gradient(145deg,#f7e9e1,#f8f0e5);
+}
+
+.ten-things-heading {
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.ten-things-heading h2 {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(25px,5vw,35px);
+    font-weight:400;
+}
+
+.ten-things-heading p {
+    color:var(--muted);
+    font-size:12px;
+    margin-top:5px;
+}
+
+.ten-list {
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.ten-item {
+    border:1px solid rgba(180,130,110,.2);
+    background:rgba(255,255,255,.7);
+    border-radius:13px;
+    overflow:hidden;
+}
+
+.ten-item button {
+    border:none;
+    background:transparent;
+    width:100%;
+    padding:15px;
+    text-align:left;
+    color:var(--brown);
+    font-size:12px;
+}
+
+.ten-item button span {
+    color:var(--rose);
+    font-weight:700;
+    margin-right:9px;
+}
+
+.ten-item p {
+    display:none;
+    padding:0 15px 15px;
+    color:#8a766a;
+    font-size:11px;
+}
+
+.ten-item.open p { display:block; }
+
+.movie-note {
+    text-align:center;
+    font-family:'Caveat',cursive;
+    font-size:22px;
+    color:#aa7668;
+    margin-top:22px;
+}
+
+/* STAR GAME */
+
+.star-card {
+    text-align:center;
+    background:linear-gradient(140deg,#f9f1e7,#f7e8e4);
+}
+
+.stars {
+    display:flex;
+    justify-content:center;
+    gap:24px;
+    margin:25px 0;
+}
+
+.star {
+    background:none;
+    border:none;
+    font-size:42px;
+    transition:.2s;
+}
+
+.star:hover { transform:scale(1.3) rotate(15deg); }
+
+.star-result {
+    min-height:60px;
+    font-family:'Caveat',cursive;
+    font-size:25px;
+    color:#b57969;
+}
+
+/* CHECK-IN */
+
+.checkin { text-align:center; }
+
+.feelings {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+    margin:25px 0;
+}
+
+.feeling {
+    border:1px solid var(--border);
+    background:white;
+    color:var(--brown);
+    border-radius:30px;
+    padding:12px 17px;
+    font-size:11px;
+}
+
+.feeling.active {
+    background:var(--green-light);
+    border-color:var(--green);
+}
+
+.checkin-status {
+    min-height:40px;
+    font-size:13px;
+    color:var(--green);
+    margin:10px;
+}
+
+/* WELLNESS */
+
+.wellness { background:#fffdf9; }
+
+.task-list {
+    list-style:none;
+    margin-top:15px;
+}
+
+.task-list li {
+    padding:13px 0;
+    border-bottom:1px solid var(--border);
+    font-size:13px;
+    color:#71675e;
+}
+
+.task-list li:last-child { border:none; }
+
+.task-list input {
+    accent-color:var(--green);
+    margin-right:10px;
+}
+
+.progress {
+    background:var(--border);
+    height:7px;
+    border-radius:10px;
+    margin-top:18px;
+    overflow:hidden;
+}
+
+.progress-fill {
+    height:100%;
+    width:0%;
+    background:var(--green);
+    transition:.3s;
+}
+
+.progress-text {
+    margin-top:8px;
+    font-size:11px;
+}
+
+/* MEMORY CORNER */
+
+.memory-card {
+    background:linear-gradient(135deg,#fff9f1,#f7e9e3);
+}
+
+.memory-item {
+    padding:18px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.memory-item:last-child { border:none; }
+
+.memory-item button {
+    border:none;
+    background:transparent;
+    color:var(--brown);
+    font-family:'Playfair Display',serif;
+    font-size:16px;
+    text-align:left;
+    width:100%;
+}
+
+.memory-item p {
+    display:none;
+    padding:12px 0 0;
+    font-size:13px;
+    line-height:1.8;
+}
+
+.memory-item.open p { display:block; }
+
+/* RIDDLE */
+
+.riddle-card {
+    text-align:center;
+    background:linear-gradient(140deg,#edf0e8,#f7f3ec);
+}
+
+.riddle-question {
+    font-family:'Playfair Display',serif;
+    font-size:19px;
+    margin:20px 0;
+}
+
+.riddle-answer {
+    color:#718a70;
+    min-height:30px;
+    font-size:15px;
+    margin:12px 0;
+}
+
+/* SECRET NOTE */
+
+.secret-card {
+    text-align:center;
+    background:linear-gradient(135deg,#f5e7e0,#f6f0e5);
+}
+
+.secret-message {
+    display:none;
+    max-width:500px;
+    margin:25px auto 0;
+    font-family:'Caveat',cursive;
+    font-size:25px;
+    line-height:1.7;
+    color:#9f6e60;
+    white-space:pre-line;
+}
+
+.secret-message.show { display:block; animation:reveal .5s ease; }
+
+/* FINAL */
+
+.final-card {
+    text-align:center;
+    padding:60px 25px;
+    background:linear-gradient(145deg,#f7e7e0,#edf0e7);
+}
+
+.final-card h2 {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(30px,6vw,45px);
+    font-weight:400;
+}
+
+.final-card h2 em { color:var(--rose); }
+
+.final-card p {
+    max-width:430px;
+    margin:20px auto;
+    color:#81746a;
+    font-size:13px;
+}
+
+/* MODAL */
+
+dialog {
+    border:1px solid var(--border);
+    border-radius:22px;
+    background:var(--paper);
+    color:var(--brown);
+    padding:35px;
+    width:min(500px,90%);
+    margin:auto;
+    box-shadow:0 20px 80px rgba(50,40,30,.2);
+}
+
+dialog::backdrop {
+    background:rgba(50,40,40,.4);
+    backdrop-filter:blur(4px);
+}
+
+dialog h2 {
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+    font-weight:400;
+    margin-bottom:18px;
+}
+
+dialog p {
+    white-space:pre-line;
+    color:#786a60;
+    line-height:2;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.close {
+    border:none;
+    background:var(--green-light);
+    padding:12px 22px;
+    border-radius:30px;
+    color:var(--brown);
+}
+
+/* FOOTER */
+
+footer {
+    text-align:center;
+    padding:60px 10px 35px;
+    color:var(--muted);
+    font-size:12px;
+}
+
+footer .heart { color:var(--rose); font-size:25px; }
+
+footer small {
+    display:block;
+    margin-top:13px;
+    letter-spacing:2px;
+    font-size:9px;
+}
+
+/* ANIMATIONS */
+
+@keyframes reveal {
+    from { opacity:0; transform:translateY(12px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+.fade { animation:reveal .4s ease; }
+
+@media(max-width:650px) {
+    .hero { padding:55px 5px; }
+    .comfort-grid,.ten-list { grid-template-columns:1fr; }
+    .notes-grid { grid-template-columns:1fr; }
+    .note { min-height:130px; }
+    .character-grid { grid-template-columns:repeat(2,1fr); }
+    .b99-fun { grid-template-columns:1fr; }
+    .card { padding:23px; }
+    .nav-label { font-size:8px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    *,*::before,*::after {
+        animation-duration:.01ms!important;
+        transition-duration:.01ms!important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="shell">
+
+<nav>
+    <div class="logo">a little <span>♡</span> corner</div>
+    <div class="nav-label">MADE WITH CARE · FOR ANUJA</div>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+    <div class="hero-flower">🌷</div>
+    <div class="eyebrow">A little corner of the internet</div>
+
+    <h1>Hello,<br><em>Anuja.</em></h1>
+
+    <p class="hero-description">
+        A small website, a few silly things,
+        some entertainment and a couple of reminders
+        to take care of yourself.
+    </p>
+
+    <div class="hero-buttons">
+        <button class="btn primary" id="openLetter">
+            Open your letter ✉
+        </button>
+
+        <button class="btn secondary"
+        onclick="document.getElementById('comfort').scrollIntoView()">
+            Explore your corner ↓
+        </button>
+    </div>
+</header>
+
+
+<!-- DAILY REMINDER -->
+
+<section class="section">
+    <div class="card letter-card">
+        <div class="icon">☀️</div>
+        <h3>A little reminder for today</h3>
+
+        <p id="dailyMessage">
+            You don't have to do anything extraordinary today.
+            Just be gentle with yourself.
+        </p>
+
+        <button class="btn secondary" id="newReminder">
+            Another reminder
+        </button>
+    </div>
+</section>
+
+
+<!-- FLOWER GARDEN -->
+
+<section class="section">
+    <div class="section-heading">
+        <h2>Your little garden</h2>
+        <p>Pick a flower. There's a message in each one.</p>
+    </div>
+
+    <div class="card flower-garden">
+        <div class="flowers">
+            <button class="flower" data-flower="0">🌷</button>
+            <button class="flower" data-flower="1">🌼</button>
+            <button class="flower" data-flower="2">🌻</button>
+            <button class="flower" data-flower="3">🌸</button>
+            <button class="flower" data-flower="4">🌺</button>
+        </div>
+
+        <p class="flower-message" id="flowerMessage">
+            Every flower has something to say. ♡
+        </p>
+    </div>
+</section>
+
+
+<!-- COMFORT MENU -->
+
+<section class="section" id="comfort">
+    <div class="section-heading">
+        <h2>Your comfort menu</h2>
+        <p>Choose whatever you feel like right now.</p>
+    </div>
+
+    <div class="comfort-grid">
+
+        <button class="comfort-btn" data-type="smile">
+            <strong>☀ Make me smile</strong>
+            <small>A tiny dose of happiness</small>
+        </button>
+
+        <button class="comfort-btn" data-type="care">
+            <strong>🌿 Be gentle with me</strong>
+            <small>Some reassuring words</small>
+        </button>
+
+        <button class="comfort-btn" data-type="fun">
+            <strong>🎈 Distract me</strong>
+            <small>Something silly and random</small>
+        </button>
+
+        <button class="comfort-btn" data-type="company">
+            <strong>💬 I need company</strong>
+            <small>A friendly reminder</small>
+        </button>
+
+    </div>
+
+    <div class="message-display">
+        <p id="comfortMessage" aria-live="polite">
+            Choose something. I've got a few things for you.
+        </p>
+    </div>
+</section>
+
+
+<!-- BROOKLYN NINE-NINE -->
+
+<section class="section">
+    <div class="card b99">
+
+        <div class="b99-header">
+            <div class="badge">SPECIAL ENTERTAINMENT UNIT</div>
+            <h2>THE NINE-NINE! 🚔</h2>
+            <p class="b99-subtitle">
+                Brooklyn's finest. Anuja's temporary entertainment department.
+            </p>
+        </div>
+
+        <div class="precinct-board">
+            <h3>Meet the precinct</h3>
+
+            <div class="character-grid">
+
+                <div class="character">
+                    <div class="emoji">🕵️</div>
+                    <strong>Jake Peralta</strong>
+                    <small>Chaos specialist</small>
+                </div>
+
+                <div class="character">
+                    <div class="emoji">👮</div>
+                    <strong>Amy Santiago</strong>
+                    <small>Organised genius</small>
+                </div>
+
+                <div class="character">
+                    <div class="emoji">🧊</div>
+                    <strong>Captain Holt</strong>
+                    <small>Professional seriousness</small>
+                </div>
+
+                <div class="character">
+                    <div class="emoji">💪</div>
+                    <strong>Terry Jeffords</strong>
+                    <small>Snack enthusiast</small>
+                </div>
+
+                <div class="character">
+                    <div class="emoji">💃</div>
+                    <strong>Rosa Diaz</strong>
+                    <small>Mysterious legend</small>
+                </div>
+
+                <div class="character">
+                    <div class="emoji">🎭</div>
+                    <strong>Charles Boyle</strong>
+                    <small>Unmatched enthusiasm</small>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="precinct-board">
+            <h3>Today's precinct assignment</h3>
+
+            <p>
+                Click below to discover which department
+                you've been assigned to today.
+            </p>
+
+            <div class="detective-result" id="detectiveResult">
+                Awaiting your assignment...
+            </div>
+
+            <div style="text-align:center;margin-top:15px">
+                <button class="btn blue-btn" id="assignDetective">
+                    Assign me a role!
+                </button>
+            </div>
+        </div>
+
+        <div class="b99-fun">
+
+            <button id="b99Joke">
+                <strong>😂 Precinct humour</strong>
+                <small>Get a random detective joke</small>
+            </button>
+
+            <button id="b99Case">
+                <strong>🔎 Solve a tiny case</strong>
+                <small>Test your detective skills</small>
+            </button>
+
+        </div>
+
+        <div class="detective-result" id="b99Output" aria-live="polite">
+            The precinct is ready for action.
+        </div>
+
+        <p style="text-align:center;margin-top:17px;font-size:10px">
+            A fan-made entertainment corner inspired by Brooklyn Nine-Nine.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- TEN THINGS I HATE ABOUT BEING SICK -->
+
+<section class="section">
+    <div class="card ten-things">
+
+        <div class="ten-things-heading">
+            <div class="icon">🎬</div>
+
+            <h2>10 Things I Hate About Being Sick</h2>
+
+            <p>
+                A tiny movie-inspired countdown.
+                Tap each one to reveal the complaint.
+            </p>
+        </div>
+
+        <div class="ten-list">
+
+            <div class="ten-item">
+                <button aria-expanded="false">
+                    <span>01.</span> The endless sneezing
+                </button>
+                <p>One sneeze is fine. Fifteen consecutive sneezes is a personal attack.</p>
+            </div>
+
+            <div class="ten-item">
+                <button aria-expanded="false">
+                    <span>02.</span> Food tasting weird
+                </button>
+                <p>When even your favourite snack decides to disappoint you.</p>
+            </div>
+
+            <div class="ten-item">
+                <button aria-expanded="false">
+                    <span>03.</span> Missing your favourite shows
+                </button>
+                <p>Having a watchlist of 47 things and the energy to watch approximately zero.</p>
+            </div>
+
+            <div class="ten-item">
+                <button aria-expanded="false">
+                    <span>04.</span> The dramatic temperature changes
+                </button>
+                <p>Hot, cold, hot again. The weather inside your blanket has its own climate system.</p>
+            </div>
+
+            <div class="ten-item">
+                <button aria-expanded="false">
+                    <span>05.</span> Everyone asking if you're okay
+                </button>
+                <p>Yes, I'm okay. No, I don't know when I'll be okay-er.</p>
+            </div>
+
+            <div class="ten-item">
+                <button aria-expanded="false">
+                    <span>06.</span> Having absolutely no energy
+                </button>
+                <p>Getting up to collect a glass of water suddenly becomes a major expedition.</p>
+            </div>
+
+            <div class="ten-item">
+                <button aria-expanded="false">
+                    <span>07.</span> The boring food suggestions
+                </button>
+                <p>Everyone becomes a professional nutrition consultant overnight.</p>
+            </div>
+
+            <div class="ten-item">
+                <button aria-expanded="false">
+                    <span>08.</span> Losing track of time
+                </button>
+                <p>Is it morning? Afternoon? Have I watched the same episode twice?</p>
+            </div>
+
+            <div class="ten-item">
+                <button aria-expanded="false">
+                    <span>09.</span> Cancelled plans
+                </button>
+                <p>The most disappointing notification is your own body requesting a postponement.</p>
+            </div>
+
+            <div class="ten-item">
+                <button aria-expanded="false">
+                    <span>10.</span> The waiting game
+                </button>
+                <p>Just waiting for the day when everything feels normal again.</p>
+            </div>
+
+        </div>
+
+        <p class="movie-note">
+            At least the recovery arc will be legendary. 🎬
+        </p>
+
+        <p style="text-align:center;font-size:10px;margin-top:10px">
+            An original humorous list, inspired by the movie's title.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- LITTLE NOTES -->
+
+<section class="section">
+    <div class="section-heading">
+        <h2>Little things to remember</h2>
+        <p>A few simple reminders for everyday life.</p>
+    </div>
+
+    <div class="notes-grid">
+
+        <div class="note">
+            <span>🌻</span>
+            <p>Ordinary days can be pretty wonderful.</p>
+            <small>NOTE NO. 01</small>
+        </div>
+
+        <div class="note">
+            <span>☁️</span>
+            <p>You don't need to be productive every second.</p>
+            <small>NOTE NO. 02</small>
+        </div>
+
+        <div class="note">
+            <span>📚</span>
+            <p>There's always something new to discover.</p>
+            <small>NOTE NO. 03</small>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- STAR GAME -->
+
+<section class="section">
+    <div class="card star-card">
+
+        <div class="section-heading">
+            <h2>Pick a little star ✨</h2>
+            <p>Three stars. Three little surprises.</p>
+        </div>
+
+        <div class="stars">
+            <button class="star">⭐</button>
+            <button class="star">✨</button>
+            <button class="star">🌟</button>
+        </div>
+
+        <p class="star-result" id="starResult">
+            Go on. Pick one!
+        </p>
+
+    </div>
+</section>
+
+
+<!-- CHECK-IN -->
+
+<section class="section">
+    <div class="card checkin">
+
+        <div class="icon">☁️</div>
+
+        <div class="section-heading">
+            <h2>How are you feeling, Anuja?</h2>
+            <p>No pressure. Just a little check-in.</p>
+        </div>
+
+        <div class="feelings">
+
+            <button class="feeling" data-feeling="better">
+                A little better ☀️
+            </button>
+
+            <button class="feeling" data-feeling="same">
+                Taking it slow 🌿
+            </button>
+
+            <button class="feeling" data-feeling="rough">
+                Not my best day ☁️
+            </button>
+
+        </div>
+
+        <p class="checkin-status" id="checkinStatus" aria-live="polite">
+            Share an update whenever you want.
+        </p>
+
+        <button class="btn green-btn" id="shareCheckin" disabled>
+            Share my check-in
+        </button>
+
+        <p style="font-size:10px;margin-top:15px">
+            Your selection stays on this device unless you share it.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- WELLNESS CHECKLIST -->
+
+<section class="section">
+    <div class="grid">
+
+        <div class="card wellness">
+
+            <div class="icon">🍵</div>
+            <h3>A little self-care list</h3>
+
+            <p>Gentle reminders. No pressure to complete everything.</p>
+
+            <ul class="task-list">
+                <li><label><input type="checkbox" class="task"> Have some water</label></li>
+                <li><label><input type="checkbox" class="task"> Get comfortable</label></li>
+                <li><label><input type="checkbox" class="task"> Take a break from screens</label></li>
+                <li><label><input type="checkbox" class="task"> Have something nourishing if you can</label></li>
+                <li><label><input type="checkbox" class="task"> Give yourself time to rest</label></li>
+            </ul>
+
+            <div class="progress">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+
+            <p class="progress-text" id="progressText">
+                0 of 5 little things done.
+            </p>
+
+        </div>
+
+        <div class="card">
+            <div class="icon">🧸</div>
+            <h3>Official permission slip</h3>
+
+            <p>This is your official permission slip to:</p>
+
+            <ul class="task-list">
+                <li>✓ Ignore unnecessary responsibilities.</li>
+                <li>✓ Take breaks whenever needed.</li>
+                <li>✓ Watch your favourite show.</li>
+                <li>✓ Ask someone for help.</li>
+                <li>✓ Have a quiet day.</li>
+            </ul>
+
+            <p style="color:#b77b6d;margin-top:15px">
+                Signed, the Department of Taking It Easy.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- MEMORY CORNER -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <h2>A little corner of thoughts</h2>
+        <p>Some things worth remembering.</p>
+    </div>
+
+    <div class="card memory-card">
+
+        <div class="memory-item">
+            <button aria-expanded="false">
+                🌷 A little thing to appreciate +
+            </button>
+            <p>
+                The little things people do can make an ordinary day
+                a lot better. Never underestimate them.
+            </p>
+        </div>
+
+        <div class="memory-item">
+            <button aria-expanded="false">
+                ☀️ Something to look forward to +
+            </button>
+            <p>
+                More peaceful mornings, good food, funny conversations,
+                new episodes and plenty of reasons to smile.
+            </p>
+        </div>
+
+        <div class="memory-item">
+            <button aria-expanded="false">
+                💬 A useful reminder +
+            </button>
+            <p>
+                Asking for help is perfectly okay.
+                Nobody has to handle everything alone.
+            </p>
+        </div>
+
+        <div class="memory-item">
+            <button aria-expanded="false">
+                🌻 A little piece of advice +
+            </button>
+            <p>
+                Be patient with yourself.
+                Everyone has days when things don't go as planned.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- RIDDLE -->
+
+<section class="section">
+    <div class="card riddle-card">
+
+        <div class="icon">🧩</div>
+        <h3>A tiny brain break</h3>
+
+        <p class="riddle-question" id="riddleQuestion">
+            What has keys but cannot open locks?
+        </p>
+
+        <button class="btn secondary" id="revealAnswer">
+            Reveal answer
+        </button>
+
+        <p class="riddle-answer" id="riddleAnswer"></p>
+
+        <button class="btn primary" id="nextRiddle">
+            Give me another one
+        </button>
+
+    </div>
+</section>
+
+
+<!-- SECRET NOTE -->
+
+<section class="section">
+    <div class="card secret-card">
+
+        <div class="icon">🔐</div>
+        <h2 class="serif">A little final note</h2>
+
+        <p style="margin:10px auto 22px">
+            One last message before you leave this little corner.
+        </p>
+
+        <button class="btn primary" id="unlockSecret">
+            Open your note
+        </button>
+
+        <div class="secret-message" id="secretMessage">
+            Anuja,
+
+            I hope this little website gave you something
+            to do, something to laugh about,
+            or at least a small distraction.
+
+            Take care of yourself, get proper rest,
+            and don't forget to have some fun
+            even on ordinary days.
+
+            Get well soon!
+
+            — Your friend.
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FINAL -->
+
+<section class="section">
+    <div class="card final-card">
+
+        <div class="icon">🌷</div>
+
+        <h2>Take care,<br><em>Anuja!</em></h2>
+
+        <p>
+            I hope you feel better soon.
+            Here's to more laughter, better days,
+            good shows and fewer boring sick days.
+        </p>
+
+        <p class="handwritten" style="font-size:29px;color:#b77b6d">
+            Have a good one! ☀️
+        </p>
+
+    </div>
+</section>
+
+
+<footer>
+    <div class="heart">♡</div>
+    <p>A little website made with thought and creativity.</p>
+    <small>A LITTLE CORNER OF COMFORT · FOR ANUJA</small>
+</footer>
+
+</div>
+
+
+<!-- LETTER MODAL -->
+
+<dialog id="letterDialog">
+
+    <h2>A little note for Anuja</h2>
+
+    <p id="letterContent">Hey Anuja,
+
+I heard you're not feeling too well,
+so I decided to make a little something.
+
+It's a collection of random things:
+some jokes, a little entertainment,
+some games and a few reminders to take care.
+
+Hopefully, you find something here
+that makes your day a little less boring.
+
+No homework, no responsibilities,
+and absolutely no pressure to reply.
+
+Just take it easy and get well soon!
+
+— Your friend.</p>
+
+    <button class="close" id="closeLetter">
+        Close this letter
+    </button>
+
+</dialog>
+
+
+<script>
+
+/* =====================================
+   1. PERSONAL SETTINGS
+===================================== */
+
+const SETTINGS = {
+
+    recipient: "Anuja",
+
+    sender: "Your friend",
+
+    letter: `Hey Anuja,
+
+I heard you're not feeling too well,
+so I decided to make a little something.
+
+It's a collection of random things:
+some jokes, a little entertainment,
+some games and a few reminders to take care.
+
+Hopefully, you find something here
+that makes your day a little less boring.
+
+No homework, no responsibilities,
+and absolutely no pressure to reply.
+
+Just take it easy and get well soon!
+
+— Your friend.`
+
+};
+
+
+/* =====================================
+   2. LETTER
+===================================== */
+
+const dialog = document.getElementById("letterDialog");
+
+document.getElementById("letterContent").textContent =
+    SETTINGS.letter;
+
+document.getElementById("openLetter").onclick = () =>
+    dialog.showModal();
+
+document.getElementById("closeLetter").onclick = () =>
+    dialog.close();
+
+dialog.addEventListener("click", event => {
+    if (event.target === dialog) dialog.close();
+});
+
+
+/* =====================================
+   3. RANDOM ITEM HELPER
+===================================== */
+
+function randomItem(array) {
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+
+/* =====================================
+   4. DAILY REMINDERS
+===================================== */
+
+const dailyMessages = [
+    "You deserve kindness, especially from yourself.",
+    "It's okay if all you accomplish today is resting.",
+    "There is no rush. Good things can wait.",
+    "You deserve a peaceful and happy day.",
+    "May today bring you a little peace and comfort.",
+    "You are allowed to have slow days.",
+    "Here's hoping tomorrow is a little better.",
+    "You don't need to have everything figured out today."
+];
+
+document.getElementById("newReminder").onclick = () => {
+
+    const element = document.getElementById("dailyMessage");
+
+    element.textContent = randomItem(dailyMessages);
+
+    element.classList.remove("fade");
+    void element.offsetWidth;
+    element.classList.add("fade");
+
+};
+
+
+/* =====================================
+   5. FLOWER GARDEN
+===================================== */
+
+const flowerMessages = [
+    "A flower for a person who deserves lovely things. 🌷",
+    "I hope your day is as bright as this flower. 🌼",
+    "You deserve a field full of sunshine. 🌻",
+    "A little flower and a little reminder to take care. 🌸",
+    "Sending you a garden of good wishes. 🌺"
+];
+
+document.querySelectorAll(".flower").forEach(button => {
+
+    button.onclick = () => {
+
+        const index = Number(button.dataset.flower);
+
+        document.getElementById("flowerMessage").textContent =
+            flowerMessages[index];
+
+    };
+
+});
+
+
+/* =====================================
+   6. COMFORT MENU
+===================================== */
+
+const comfort = {
+
+    smile: [
+        "Breaking news: Anuja has officially been assigned a mandatory smile break. ☀️",
+        "If smiles were currency, you'd be ridiculously wealthy.",
+        "A tiny imaginary puppy has been sent to your doorstep. 🐶",
+        "Somewhere, a cat just sneezed. I thought you should know.",
+        "This is your reminder that laughing at silly things is a perfectly valid activity."
+    ],
+
+    care: [
+        "Take things one moment at a time. There's no rush.",
+        "You don't have to be cheerful all the time. It's okay to rest.",
+        "Please remember to drink water and take care of yourself.",
+        "You deserve patience, kindness and a little extra care."
+    ],
+
+    fun: [
+        "Would you rather have a tiny dragon or a tiny dinosaur as a pet?",
+        "Fun fact: Octopuses have three hearts.",
+        "Imagine having a personal penguin that follows you everywhere.",
+        "What if clouds are just the sky's collection of sheep?",
+        "If animals had jobs, what would a giraffe be? A very tall supervisor."
+    ],
+
+    company: [
+        "You don't need to say anything. Sometimes company is enough.",
+        "Hope you know that you're appreciated.",
+        "Whenever you feel like talking, a friend would be happy to listen.",
+        "No pressure to reply to anyone. Just take care of yourself."
+    ]
+
+};
+
+document.querySelectorAll(".comfort-btn").forEach(button => {
+
+    button.onclick = () => {
+
+        const category = button.dataset.type;
+
+        const output = document.getElementById("comfortMessage");
+
+        output.textContent = randomItem(comfort[category]);
+
+        output.classList.remove("fade");
+        void output.offsetWidth;
+        output.classList.add("fade");
+
+    };
+
+});
+
+
+/* =====================================
+   7. BROOKLYN NINE-NINE
+===================================== */
+
+const detectiveRoles = [
+    "Jake Peralta: Chief of making questionable jokes.",
+    "Amy Santiago: Head of organising the entire precinct.",
+    "Captain Holt: Director of maintaining a serious expression.",
+    "Terry Jeffords: Chief of snack operations.",
+    "Rosa Diaz: Head of mysterious investigations.",
+    "Charles Boyle: Director of enthusiastic food reviews."
+];
+
+document.getElementById("assignDetective").onclick = () => {
+
+    document.getElementById("detectiveResult").textContent =
+        randomItem(detectiveRoles);
+
+};
+
+
+/* Original B99-inspired jokes */
+
+const b99Jokes = [
+    "Detective: Where were you at 8 PM? Suspect: Watching TV. Detective: Alibi accepted. That's a respectable evening.",
+
+    "Captain's report: The precinct has run out of coffee. Morale is officially under investigation.",
+
+    "Jake's imaginary productivity report: 10% solving cases, 90% making unnecessary sound effects.",
+
+    "Amy's organisational system has a folder for folders. There is a backup folder for that folder.",
+
+    "Terry has declared all snacks to be protected precinct property.",
+
+    "Rosa has been asked to smile for a group photo. The investigation is ongoing."
+];
+
+document.getElementById("b99Joke").onclick = () => {
+
+    document.getElementById("b99Output").textContent =
+        randomItem(b99Jokes);
+
+};
+
+
+/* Tiny detective case */
+
+const cases = [
+
+    {
+        question: "A cake disappears. Three people were nearby. Jake has frosting on his shirt. What's the first clue?",
+        answer: "The frosting! It's a suspiciously delicious piece of evidence."
+    },
+
+    {
+        question: "A room is locked, but the window is open and there are wet footprints. What's a reasonable first suspicion?",
+        answer: "Someone may have entered or left through the window. Check the footprints!"
+    },
+
+    {
+        question: "Three identical cups are on a table. One has a spoon beside it. What can you confidently conclude?",
+        answer: "Only that someone used a spoon. Detective work means not jumping to conclusions!"
+    }
+
+];
+
+document.getElementById("b99Case").onclick = () => {
+
+    const chosen = randomItem(cases);
+
+    document.getElementById("b99Output").textContent =
+        chosen.question + " " + chosen.answer;
+
+};
+
+
+/* =====================================
+   8. TEN THINGS SECTION
+===================================== */
+
+document.querySelectorAll(".ten-item button").forEach(button => {
+
+    button.onclick = () => {
+
+        const item = button.parentElement;
+
+        const open = item.classList.toggle("open");
+
+        button.setAttribute("aria-expanded", String(open));
+
+    };
+
+});
+
+
+/* =====================================
+   9. STAR GAME
+===================================== */
+
+const starMessages = [
+    "A little star wishes you a peaceful day. ⭐",
+    "Here's a little sunshine for your day. ☀️",
+    "You deserve all the little joys in life.",
+    "May tomorrow bring something wonderful.",
+    "Here's a tiny reminder to take a break.",
+    "Hope you find something to laugh about today."
+];
+
+document.querySelectorAll(".star").forEach(button => {
+
+    button.onclick = () => {
+
+        document.getElementById("starResult").textContent =
+            randomItem(starMessages);
+
+    };
+
+});
+
+
+/* =====================================
+   10. CHECK-IN
+===================================== */
+
+const feelingMessages = {
+
+    better: "A little better today. ☀️",
+
+    same: "Taking things slowly today. 🌿",
+
+    rough: "Not feeling my best today. ☁️"
+
+};
+
+let selectedFeeling = null;
+
+document.querySelectorAll(".feeling").forEach(button => {
+
+    button.onclick = () => {
+
+        selectedFeeling = button.dataset.feeling;
+
+        document.querySelectorAll(".feeling").forEach(item =>
+            item.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        document.getElementById("checkinStatus").textContent =
+            feelingMessages[selectedFeeling];
+
+        document.getElementById("shareCheckin").disabled = false;
+
+        try {
+            localStorage.setItem("anujaCheckin", selectedFeeling);
+        } catch (error) {}
+
+    };
+
+});
+
+
+/* Restore previous selection */
+
+try {
+
+    const saved = localStorage.getItem("anujaCheckin");
+
+    if (saved && feelingMessages[saved]) {
+
+        selectedFeeling = saved;
+
+        document.querySelectorAll(".feeling").forEach(button => {
+
+            if (button.dataset.feeling === saved) {
+                button.classList.add("active");
+            }
+
+        });
+
+        document.getElementById("checkinStatus").textContent =
+            "Your last selection: " + feelingMessages[saved];
+
+        document.getElementById("shareCheckin").disabled = false;
+
+    }
+
+} catch (error) {}
+
+
+/* =====================================
+   11. SHARE CHECK-IN
+===================================== */
+
+document.getElementById("shareCheckin").onclick = async () => {
+
+    if (!selectedFeeling) return;
+
+    const message =
+        "Anuja's little check-in:\n\n" +
+        feelingMessages[selectedFeeling];
+
+    try {
+
+        if (navigator.share) {
+
+            await navigator.share({
+                title: "A little check-in",
+                text: message
+            });
+
+        } else if (navigator.clipboard &&
+                   window.isSecureContext) {
+
+            await navigator.clipboard.writeText(message);
+
+            document.getElementById("checkinStatus").textContent =
+                "Copied! You can now share your update.";
+
+        } else {
+
+            window.prompt("Copy your check-in:", message);
+
+        }
+
+    } catch (error) {
+
+        if (error.name !== "AbortError") {
+            document.getElementById("checkinStatus").textContent =
+                "Sharing was unavailable. Try again.";
+        }
+
+    }
+
+};
+
+
+/* =====================================
+   12. WELLNESS CHECKLIST
+===================================== */
+
+const tasks = document.querySelectorAll(".task");
+
+function updateProgress() {
+
+    const completed =
+        document.querySelectorAll(".task:checked").length;
+
+    const percentage = (completed / tasks.length) * 100;
+
+    document.getElementById("progressFill").style.width =
+        percentage + "%";
+
+    document.getElementById("progressText").textContent =
+        completed + " of " + tasks.length + " little things done.";
+
+}
+
+tasks.forEach(task => {
+    task.addEventListener("change", updateProgress);
+});
+
+
+/* =====================================
+   13. MEMORY CORNER
+===================================== */
+
+document.querySelectorAll(".memory-item button").forEach(button => {
+
+    button.onclick = () => {
+
+        const item = button.parentElement;
+
+        const open = item.classList.toggle("open");
+
+        button.setAttribute("aria-expanded", String(open));
+
+    };
+
+});
+
+
+/* =====================================
+   14. SECRET NOTE
+===================================== */
+
+document.getElementById("unlockSecret").onclick = () => {
+
+    const message = document.getElementById("secretMessage");
+
+    const button = document.getElementById("unlockSecret");
+
+    message.classList.toggle("show");
+
+    button.textContent =
+        message.classList.contains("show")
+        ? "Close your note"
+        : "Open your note";
+
+};
+
+
+/* =====================================
+   15. RIDDLE CORNER
+===================================== */
+
+const riddles = [
+
+    {
+        question:"What has keys but cannot open locks?",
+        answer:"A piano! 🎹"
+    },
+
+    {
+        question:"What gets wetter the more it dries?",
+        answer:"A towel!"
+    },
+
+    {
+        question:"What has a face and two hands but no arms?",
+        answer:"A clock!"
+    },
+
+    {
+        question:"What has many teeth but cannot bite?",
+        answer:"A comb!"
+    },
+
+    {
+        question:"What goes up but never comes down?",
+        answer:"Your age!"
+    },
+
+    {
+        question:"What has a neck but no head?",
+        answer:"A bottle!"
+    },
+
+    {
+        question:"What has one eye but cannot see?",
+        answer:"A needle!"
+    }
+
+];
+
+let currentRiddle = 0;
+
+function displayRiddle() {
+
+    document.getElementById("riddleQuestion").textContent =
+        riddles[currentRiddle].question;
+
+    document.getElementById("riddleAnswer").textContent = "";
+
+}
+
+document.getElementById("revealAnswer").onclick = () => {
+
+    document.getElementById("riddleAnswer").textContent =
+        riddles[currentRiddle].answer;
+
+};
+
+document.getElementById("nextRiddle").onclick = () => {
+
+    currentRiddle = (currentRiddle + 1) % riddles.length;
+
+    displayRiddle();
+
+};
+
+
+/* =====================================
+   16. FLOATING PETALS
+===================================== */
+
+const reducedMotion =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function createPetal() {
+
+    if (reducedMotion) return;
+
+    const petal = document.createElement("div");
+
+    petal.className = "petal";
+
+    petal.textContent = randomItem(["🌸","🌷","✿","♡"]);
+
+    petal.style.left = Math.random() * 100 + "vw";
+
+    const duration = 7 + Math.random() * 7;
+
+    petal.style.animationDuration = duration + "s";
+
+    petal.style.fontSize =
+        (12 + Math.random() * 12) + "px";
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => petal.remove(), duration * 1000);
+
+}
+
+if (!reducedMotion) {
+    setInterval(createPetal, 1800);
+}
+
+
+/* =====================================
+   17. FINAL CONSOLE MESSAGE
+===================================== */
+
+console.log("A little corner of comfort for Anuja.");
+
+</script>
+
+</body>
+</html>
