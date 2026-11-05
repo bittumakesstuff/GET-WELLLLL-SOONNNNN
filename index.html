@@ -1,2068 +1,2517 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#fbf6ef">
-<title>A Little Corner for Anuja</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10172b" />
+  <meta name="description" content="A little digital care package for Anuja: dogs, dancing, Messi, Barça, and a reminder to rest." />
+  <title>ANUJA — The Comeback Edition</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
 
-:root {
-    --bg:#fbf6ef;
-    --paper:#fffdf9;
-    --rose:#c98979;
-    --rose-light:#f7e7e0;
-    --green:#839982;
-    --green-light:#eaf0e7;
-    --brown:#57483e;
-    --muted:#97887c;
-    --border:#eee3d8;
-    --blue:#dce9f3;
-    --blue-dark:#52718b;
-    --shadow:0 12px 40px rgba(89,65,48,.07);
-}
-
-* {
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html { scroll-behavior:smooth; }
-
-body {
-    background:
-      radial-gradient(ellipse at 5% 5%,#f8e8df,transparent 35%),
-      radial-gradient(ellipse at 95% 35%,#eaf0e5,transparent 35%),
-      var(--bg);
-    color:var(--brown);
-    font-family:'DM Sans',sans-serif;
-    line-height:1.7;
-    overflow-x:hidden;
-}
-
-button { font-family:inherit; cursor:pointer; }
-
-button:focus-visible {
-    outline:2px solid var(--rose);
-    outline-offset:4px;
-}
-
-.shell {
-    width:min(1000px,91%);
-    margin:auto;
-}
-
-.serif { font-family:'Playfair Display',serif; }
-.handwritten { font-family:'Caveat',cursive; }
-
-/* FLOATING FLOWERS */
-
-.petal {
-    position:fixed;
-    top:-30px;
-    z-index:10;
-    pointer-events:none;
-    opacity:.45;
-    animation:fall linear forwards;
-}
-
-@keyframes fall {
-    to {
-        transform:translateY(110vh) rotate(400deg);
-        opacity:0;
+  <style>
+    :root {
+      --ink: #11182b;
+      --navy: #10172b;
+      --navy-2: #182440;
+      --blue: #0756a5;
+      --blue-light: #dcecff;
+      --red: #a50044;
+      --red-light: #f8e1eb;
+      --gold: #edbb00;
+      --cream: #f7f3eb;
+      --paper: #fffdf8;
+      --muted: #687287;
+      --line: rgba(17,24,43,.13);
+      --mint: #dce9df;
+      --shadow: 0 22px 65px rgba(16,23,43,.13);
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --serif: 'Playfair Display', Georgia, serif;
+      --mono: 'DM Mono', 'Courier New', monospace;
     }
-}
 
-/* NAVIGATION */
-
-nav {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:23px 0;
-}
-
-.logo {
-    font-family:'Playfair Display',serif;
-    font-size:19px;
-}
-
-.logo span { color:var(--rose); }
-
-.nav-label {
-    color:var(--muted);
-    font-size:10px;
-    letter-spacing:2px;
-}
-
-/* HERO */
-
-.hero {
-    text-align:center;
-    padding:80px 15px;
-}
-
-.hero h1 {
-    font-family:'Playfair Display',serif;
-    font-size:clamp(43px,8vw,82px);
-    font-weight:400;
-    line-height:1.14;
-}
-
-.hero h1 em { color:var(--rose); }
-
-.hero-description {
-    max-width:470px;
-    margin:25px auto;
-    color:var(--muted);
-    font-size:14px;
-}
-
-.eyebrow {
-    text-transform:uppercase;
-    letter-spacing:4px;
-    font-size:10px;
-    color:var(--rose);
-    margin-bottom:20px;
-}
-
-.hero-flower {
-    font-size:35px;
-    margin-bottom:20px;
-}
-
-.hero-buttons {
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-top:30px;
-}
-
-/* BUTTONS */
-
-.btn {
-    padding:13px 23px;
-    border-radius:40px;
-    border:none;
-    font-size:12px;
-    transition:.25s;
-}
-
-.btn:hover { transform:translateY(-3px); }
-
-.primary { background:var(--rose); color:white; }
-.secondary { background:white; color:var(--brown); border:1px solid var(--border); }
-.green-btn { background:var(--green); color:white; }
-.blue-btn { background:var(--blue-dark); color:white; }
-
-button:disabled { opacity:.5; cursor:not-allowed; }
-
-/* SECTIONS */
-
-.section {
-    margin:35px 0;
-    scroll-margin-top:25px;
-}
-
-.section-heading {
-    text-align:center;
-    margin-bottom:25px;
-}
-
-.section-heading h2 {
-    font-family:'Playfair Display',serif;
-    font-weight:400;
-    font-size:clamp(25px,5vw,34px);
-}
-
-.section-heading p {
-    color:var(--muted);
-    font-size:12px;
-    margin-top:5px;
-}
-
-.card {
-    background:rgba(255,253,249,.92);
-    border:1px solid var(--border);
-    border-radius:23px;
-    padding:30px;
-    box-shadow:var(--shadow);
-}
-
-.icon { font-size:30px; margin-bottom:12px; }
-
-.card h3 {
-    font-family:'Playfair Display',serif;
-    font-size:22px;
-    font-weight:400;
-    margin-bottom:8px;
-}
-
-.card p { color:var(--muted); font-size:13px; }
-
-/* LETTER */
-
-.letter-card {
-    text-align:center;
-    padding:50px 25px;
-    background:linear-gradient(140deg,#fffaf5,#f8e9e2);
-}
-
-.letter-card .icon { font-size:42px; }
-
-.letter-card p {
-    max-width:480px;
-    margin:15px auto 25px;
-}
-
-/* FLOWER GARDEN */
-
-.flower-garden {
-    background:linear-gradient(140deg,#edf2e9,#f8f3eb);
-    text-align:center;
-}
-
-.flowers {
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:18px;
-    margin:30px 0;
-}
-
-.flower {
-    border:none;
-    background:transparent;
-    font-size:44px;
-    transition:.3s;
-}
-
-.flower:hover { transform:scale(1.3) rotate(15deg); }
-
-.flower-message {
-    font-family:'Caveat',cursive;
-    font-size:24px;
-    color:#718a70;
-    min-height:45px;
-}
-
-/* COMFORT MENU */
-
-.comfort-grid {
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:13px;
-}
-
-.comfort-btn {
-    padding:22px;
-    background:white;
-    border:1px solid var(--border);
-    border-radius:17px;
-    text-align:left;
-    color:var(--brown);
-    transition:.2s;
-}
-
-.comfort-btn:hover {
-    background:var(--rose-light);
-    transform:translateY(-3px);
-}
-
-.comfort-btn strong {
-    display:block;
-    font-family:'Playfair Display',serif;
-    font-size:17px;
-    font-weight:400;
-}
-
-.comfort-btn small {
-    color:var(--muted);
-    font-size:11px;
-}
-
-.message-display {
-    margin-top:15px;
-    min-height:120px;
-    padding:25px;
-    border-radius:18px;
-    background:var(--green-light);
-    display:grid;
-    place-items:center;
-    text-align:center;
-}
-
-.message-display p {
-    font-family:'Playfair Display',serif;
-    color:#61765e;
-    font-size:19px;
-}
-
-/* NOTES */
-
-.notes-grid {
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
-
-.note {
-    min-height:180px;
-    padding:23px 18px;
-    border-radius:15px;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    transition:.2s;
-}
-
-.note:hover { transform:translateY(-4px); }
-
-.note:nth-child(1) { background:#f6e8df; }
-.note:nth-child(2) { background:#eaf0e5; }
-.note:nth-child(3) { background:#f7f0df; }
-
-.note p {
-    font-family:'Caveat',cursive;
-    font-size:22px;
-    color:var(--brown);
-}
-
-.note small {
-    color:var(--muted);
-    font-size:9px;
-    letter-spacing:1px;
-}
-
-/* BROOKLYN 99 */
-
-.b99 {
-    background:linear-gradient(140deg,#e8f0f6,#f5f5ef);
-    border-color:#d6e2eb;
-}
-
-.b99-header {
-    text-align:center;
-    padding:10px 0 25px;
-}
-
-.badge {
-    display:inline-block;
-    background:#52718b;
-    color:white;
-    padding:6px 13px;
-    border-radius:20px;
-    font-size:9px;
-    letter-spacing:2px;
-    margin-bottom:15px;
-}
-
-.b99 h2 {
-    font-family:'Playfair Display',serif;
-    font-size:35px;
-    font-weight:400;
-    color:#425f79;
-}
-
-.b99-subtitle {
-    color:#71899d;
-    font-size:12px;
-    margin-top:5px;
-}
-
-.precinct-board {
-    background:rgba(255,255,255,.7);
-    border:1px solid #d9e3eb;
-    border-radius:16px;
-    padding:22px;
-    margin-top:15px;
-}
-
-.precinct-board h3 {
-    color:#52718b;
-    font-family:'Playfair Display',serif;
-    font-weight:400;
-    font-size:20px;
-    margin-bottom:12px;
-}
-
-.character-grid {
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:10px;
-    margin-top:15px;
-}
-
-.character {
-    background:white;
-    padding:16px 10px;
-    border-radius:13px;
-    text-align:center;
-    border:1px solid #e1e9ef;
-}
-
-.character .emoji { font-size:27px; }
-
-.character strong {
-    display:block;
-    font-size:12px;
-    margin:5px 0;
-    color:#425f79;
-}
-
-.character small {
-    color:#8493a0;
-    font-size:10px;
-}
-
-.detective-result {
-    background:#e6eef5;
-    color:#425f79;
-    border-radius:13px;
-    padding:18px;
-    text-align:center;
-    min-height:85px;
-    margin-top:15px;
-    font-family:'Playfair Display',serif;
-    font-size:17px;
-}
-
-.b99-fun {
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    margin-top:15px;
-}
-
-.b99-fun button {
-    padding:16px;
-    background:white;
-    border:1px solid #d9e3eb;
-    border-radius:13px;
-    color:#425f79;
-    text-align:left;
-}
-
-.b99-fun strong {
-    display:block;
-    font-size:13px;
-}
-
-.b99-fun small {
-    color:#8493a0;
-    font-size:10px;
-}
-
-/* TEN THINGS SECTION */
-
-.ten-things {
-    background:linear-gradient(145deg,#f7e9e1,#f8f0e5);
-}
-
-.ten-things-heading {
-    text-align:center;
-    margin-bottom:25px;
-}
-
-.ten-things-heading h2 {
-    font-family:'Playfair Display',serif;
-    font-size:clamp(25px,5vw,35px);
-    font-weight:400;
-}
-
-.ten-things-heading p {
-    color:var(--muted);
-    font-size:12px;
-    margin-top:5px;
-}
-
-.ten-list {
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-}
-
-.ten-item {
-    border:1px solid rgba(180,130,110,.2);
-    background:rgba(255,255,255,.7);
-    border-radius:13px;
-    overflow:hidden;
-}
-
-.ten-item button {
-    border:none;
-    background:transparent;
-    width:100%;
-    padding:15px;
-    text-align:left;
-    color:var(--brown);
-    font-size:12px;
-}
-
-.ten-item button span {
-    color:var(--rose);
-    font-weight:700;
-    margin-right:9px;
-}
-
-.ten-item p {
-    display:none;
-    padding:0 15px 15px;
-    color:#8a766a;
-    font-size:11px;
-}
-
-.ten-item.open p { display:block; }
-
-.movie-note {
-    text-align:center;
-    font-family:'Caveat',cursive;
-    font-size:22px;
-    color:#aa7668;
-    margin-top:22px;
-}
-
-/* STAR GAME */
-
-.star-card {
-    text-align:center;
-    background:linear-gradient(140deg,#f9f1e7,#f7e8e4);
-}
-
-.stars {
-    display:flex;
-    justify-content:center;
-    gap:24px;
-    margin:25px 0;
-}
-
-.star {
-    background:none;
-    border:none;
-    font-size:42px;
-    transition:.2s;
-}
-
-.star:hover { transform:scale(1.3) rotate(15deg); }
-
-.star-result {
-    min-height:60px;
-    font-family:'Caveat',cursive;
-    font-size:25px;
-    color:#b57969;
-}
-
-/* CHECK-IN */
-
-.checkin { text-align:center; }
-
-.feelings {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
-    margin:25px 0;
-}
-
-.feeling {
-    border:1px solid var(--border);
-    background:white;
-    color:var(--brown);
-    border-radius:30px;
-    padding:12px 17px;
-    font-size:11px;
-}
-
-.feeling.active {
-    background:var(--green-light);
-    border-color:var(--green);
-}
-
-.checkin-status {
-    min-height:40px;
-    font-size:13px;
-    color:var(--green);
-    margin:10px;
-}
-
-/* WELLNESS */
-
-.wellness { background:#fffdf9; }
-
-.task-list {
-    list-style:none;
-    margin-top:15px;
-}
-
-.task-list li {
-    padding:13px 0;
-    border-bottom:1px solid var(--border);
-    font-size:13px;
-    color:#71675e;
-}
-
-.task-list li:last-child { border:none; }
-
-.task-list input {
-    accent-color:var(--green);
-    margin-right:10px;
-}
-
-.progress {
-    background:var(--border);
-    height:7px;
-    border-radius:10px;
-    margin-top:18px;
-    overflow:hidden;
-}
-
-.progress-fill {
-    height:100%;
-    width:0%;
-    background:var(--green);
-    transition:.3s;
-}
-
-.progress-text {
-    margin-top:8px;
-    font-size:11px;
-}
-
-/* MEMORY CORNER */
-
-.memory-card {
-    background:linear-gradient(135deg,#fff9f1,#f7e9e3);
-}
-
-.memory-item {
-    padding:18px 0;
-    border-bottom:1px solid var(--border);
-}
-
-.memory-item:last-child { border:none; }
-
-.memory-item button {
-    border:none;
-    background:transparent;
-    color:var(--brown);
-    font-family:'Playfair Display',serif;
-    font-size:16px;
-    text-align:left;
-    width:100%;
-}
-
-.memory-item p {
-    display:none;
-    padding:12px 0 0;
-    font-size:13px;
-    line-height:1.8;
-}
-
-.memory-item.open p { display:block; }
-
-/* RIDDLE */
-
-.riddle-card {
-    text-align:center;
-    background:linear-gradient(140deg,#edf0e8,#f7f3ec);
-}
-
-.riddle-question {
-    font-family:'Playfair Display',serif;
-    font-size:19px;
-    margin:20px 0;
-}
-
-.riddle-answer {
-    color:#718a70;
-    min-height:30px;
-    font-size:15px;
-    margin:12px 0;
-}
-
-/* SECRET NOTE */
-
-.secret-card {
-    text-align:center;
-    background:linear-gradient(135deg,#f5e7e0,#f6f0e5);
-}
-
-.secret-message {
-    display:none;
-    max-width:500px;
-    margin:25px auto 0;
-    font-family:'Caveat',cursive;
-    font-size:25px;
-    line-height:1.7;
-    color:#9f6e60;
-    white-space:pre-line;
-}
-
-.secret-message.show { display:block; animation:reveal .5s ease; }
-
-/* FINAL */
-
-.final-card {
-    text-align:center;
-    padding:60px 25px;
-    background:linear-gradient(145deg,#f7e7e0,#edf0e7);
-}
-
-.final-card h2 {
-    font-family:'Playfair Display',serif;
-    font-size:clamp(30px,6vw,45px);
-    font-weight:400;
-}
-
-.final-card h2 em { color:var(--rose); }
-
-.final-card p {
-    max-width:430px;
-    margin:20px auto;
-    color:#81746a;
-    font-size:13px;
-}
-
-/* MODAL */
-
-dialog {
-    border:1px solid var(--border);
-    border-radius:22px;
-    background:var(--paper);
-    color:var(--brown);
-    padding:35px;
-    width:min(500px,90%);
-    margin:auto;
-    box-shadow:0 20px 80px rgba(50,40,30,.2);
-}
-
-dialog::backdrop {
-    background:rgba(50,40,40,.4);
-    backdrop-filter:blur(4px);
-}
-
-dialog h2 {
-    font-family:'Playfair Display',serif;
-    font-size:28px;
-    font-weight:400;
-    margin-bottom:18px;
-}
-
-dialog p {
-    white-space:pre-line;
-    color:#786a60;
-    line-height:2;
-    font-size:14px;
-    margin-bottom:20px;
-}
-
-.close {
-    border:none;
-    background:var(--green-light);
-    padding:12px 22px;
-    border-radius:30px;
-    color:var(--brown);
-}
-
-/* FOOTER */
-
-footer {
-    text-align:center;
-    padding:60px 10px 35px;
-    color:var(--muted);
-    font-size:12px;
-}
-
-footer .heart { color:var(--rose); font-size:25px; }
-
-footer small {
-    display:block;
-    margin-top:13px;
-    letter-spacing:2px;
-    font-size:9px;
-}
-
-/* ANIMATIONS */
-
-@keyframes reveal {
-    from { opacity:0; transform:translateY(12px); }
-    to { opacity:1; transform:translateY(0); }
-}
-
-.fade { animation:reveal .4s ease; }
-
-@media(max-width:650px) {
-    .hero { padding:55px 5px; }
-    .comfort-grid,.ten-list { grid-template-columns:1fr; }
-    .notes-grid { grid-template-columns:1fr; }
-    .note { min-height:130px; }
-    .character-grid { grid-template-columns:repeat(2,1fr); }
-    .b99-fun { grid-template-columns:1fr; }
-    .card { padding:23px; }
-    .nav-label { font-size:8px; }
-}
-
-@media(prefers-reduced-motion:reduce) {
-    *,*::before,*::after {
-        animation-duration:.01ms!important;
-        transition-duration:.01ms!important;
+    * {
+      box-sizing: border-box;
     }
-}
-</style>
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .12;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    button:focus-visible,
+    a:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 44px));
+      margin: 0 auto;
+    }
+
+    .mono {
+      font-family: var(--mono);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--red);
+      font: 500 10px var(--mono);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 21px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    /* NAVIGATION */
+
+    .topbar {
+      position: relative;
+      z-index: 5;
+      background: var(--navy);
+      color: white;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    .topbar-inner {
+      min-height: 74px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: -.03em;
+    }
+
+    .brand-mark {
+      width: 39px;
+      height: 39px;
+      border-radius: 12px 12px 12px 4px;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      background: linear-gradient(135deg,var(--gold),#ffe88a);
+      font: 900 12px var(--mono);
+      transform: rotate(-4deg);
+      box-shadow: 4px 4px 0 var(--red);
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 3px;
+      color: #aab5cd;
+      font: 9px var(--mono);
+      letter-spacing: .13em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 23px;
+      color: #c5cee0;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .nav a {
+      transition: color .2s;
+    }
+
+    .nav a:hover {
+      color: var(--gold);
+    }
+
+    .top-status {
+      color: var(--gold);
+      border: 1px solid rgba(237,187,0,.35);
+      padding: 9px 12px;
+      border-radius: 999px;
+      font: 9px var(--mono);
+      letter-spacing: .1em;
+    }
+
+    /* HERO SECTION */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      padding: 83px 0 78px;
+      background:
+        radial-gradient(circle at 76% 24%,rgba(7,86,165,.35),transparent 26rem),
+        radial-gradient(circle at 7% 100%,rgba(165,0,68,.34),transparent 30rem),
+        var(--navy);
+    }
+
+    .hero::before {
+      content: 'ANUJA';
+      position: absolute;
+      left: -18px;
+      bottom: -79px;
+      color: rgba(255,255,255,.035);
+      font: 900 clamp(130px,23vw,300px)/.8 var(--sans);
+      letter-spacing: -.1em;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 54px;
+    }
+
+    .hero .eyebrow {
+      color: var(--gold);
+    }
+
+    .hero h1 {
+      max-width: 710px;
+      margin: 22px 0 20px;
+      font: 800 clamp(48px,6.7vw,82px)/.98 var(--serif);
+      letter-spacing: -.065em;
+    }
+
+    .hero h1 em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    .hero-copy {
+      max-width: 540px;
+      color: #c5cee0;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .hero-copy strong {
+      color: white;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 27px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 45px;
+      border: 0;
+      border-radius: 8px;
+      padding: 13px 17px;
+      cursor: pointer;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-gold {
+      color: var(--navy);
+      background: var(--gold);
+      box-shadow: 0 5px 0 #b18a00;
+    }
+
+    .btn-gold:hover {
+      background: #ffda38;
+      box-shadow: 0 7px 0 #b18a00;
+    }
+
+    .btn-outline {
+      color: white;
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(255,255,255,.05);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.12);
+    }
+
+    .fineprint {
+      color: #8995af;
+      margin-top: 18px;
+      font: 9px var(--mono);
+      letter-spacing: .1em;
+    }
+
+    /* MATCH CARD */
+
+    .match-card {
+      position: relative;
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 17px;
+      background: linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.035));
+      box-shadow: 0 30px 90px rgba(0,0,0,.24);
+      transform: rotate(1.2deg);
+      overflow: hidden;
+    }
+
+    .match-card::after {
+      content: '10';
+      position: absolute;
+      right: 2px;
+      bottom: -80px;
+      color: rgba(255,255,255,.045);
+      font: 900 260px/.9 var(--sans);
+      letter-spacing: -.12em;
+      pointer-events: none;
+    }
+
+    .match-head {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font: 9px var(--mono);
+      letter-spacing: .13em;
+      color: #c2cbe0;
+    }
+
+    .live-pill {
+      color: var(--gold);
+      padding: 6px 8px;
+      border: 1px solid rgba(237,187,0,.45);
+      border-radius: 4px;
+    }
+
+    .versus {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 10px;
+      align-items: center;
+      text-align: center;
+      padding: 34px 0 25px;
+    }
+
+    .team-icon {
+      width: 68px;
+      height: 68px;
+      margin: 0 auto 11px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      font-size: 31px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.13);
+    }
+
+    .team:first-child .team-icon {
+      background: linear-gradient(145deg,var(--blue),var(--red));
+    }
+
+    .team:last-child .team-icon {
+      background: linear-gradient(145deg,#6f7685,#333c50);
+    }
+
+    .team strong {
+      display: block;
+      font-size: 11px;
+    }
+
+    .team small {
+      display: block;
+      margin-top: 4px;
+      color: #aeb9d1;
+      font: 8px var(--mono);
+      letter-spacing: .12em;
+    }
+
+    .vs {
+      color: var(--gold);
+      font: italic 700 17px var(--serif);
+    }
+
+    .scoreline {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      padding-top: 17px;
+    }
+
+    .scoreline b {
+      font: 900 35px var(--sans);
+      letter-spacing: -.06em;
+    }
+
+    .scoreline span {
+      color: #aeb9d1;
+      font: 9px var(--mono);
+      letter-spacing: .12em;
+    }
+
+    .match-footer {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 17px;
+      color: #aeb9d1;
+      font: 8px var(--mono);
+      letter-spacing: .1em;
+    }
+
+    .match-footer b {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* TICKER */
+
+    .ticker {
+      color: var(--navy);
+      overflow: hidden;
+      background: var(--gold);
+      border-block: 1px solid rgba(17,24,43,.12);
+    }
+
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      gap: 30px;
+      padding: 12px 0;
+      animation: marquee 32s linear infinite;
+      font: 10px var(--mono);
+      letter-spacing: .12em;
+    }
+
+    .ticker-track span {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .ticker-track b {
+      color: var(--red);
+    }
+
+    @keyframes marquee {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* COMMON SECTIONS */
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      margin-bottom: 31px;
+    }
+
+    .section-head h2 {
+      margin: 12px 0 0;
+      font: 700 clamp(34px,4.5vw,54px)/1.02 var(--serif);
+      letter-spacing: -.055em;
+    }
+
+    .section-head p {
+      max-width: 390px;
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* ANUJA'S INTERESTS */
+
+    .identity-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 13px;
+    }
+
+    .identity-card {
+      position: relative;
+      min-height: 245px;
+      padding: 21px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      overflow: hidden;
+      background: rgba(255,253,248,.85);
+      box-shadow: 0 10px 30px rgba(16,23,43,.04);
+      transition: transform .22s, box-shadow .22s;
+    }
+
+    .identity-card:hover {
+      transform: translateY(-6px) rotate(-.5deg);
+      box-shadow: var(--shadow);
+    }
+
+    .identity-card::after {
+      content: attr(data-number);
+      position: absolute;
+      right: 8px;
+      bottom: -28px;
+      color: rgba(17,24,43,.045);
+      font: 900 110px var(--sans);
+      letter-spacing: -.1em;
+    }
+
+    .identity-card .symbol {
+      width: 49px;
+      height: 49px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      margin-bottom: 25px;
+      font-size: 25px;
+      background: var(--red-light);
+    }
+
+    .identity-card:nth-child(2) .symbol {
+      background: #f8edc8;
+    }
+
+    .identity-card:nth-child(3) .symbol {
+      background: var(--blue-light);
+    }
+
+    .identity-card:nth-child(4) .symbol {
+      background: var(--mint);
+    }
+
+    .identity-card h3 {
+      margin: 0 0 8px;
+      font: 700 20px var(--serif);
+    }
+
+    .identity-card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.75;
+    }
+
+    .identity-card .tag {
+      display: inline-block;
+      margin-top: 17px;
+      color: var(--red);
+      font: 9px var(--mono);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* PUPPY SECTION */
+
+    .dog-section {
+      background: var(--mint);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dog-section::before {
+      content: 'WOOF';
+      position: absolute;
+      right: -10px;
+      bottom: -65px;
+      color: rgba(16,23,43,.045);
+      font: 900 clamp(120px,19vw,230px)/.9 var(--sans);
+      letter-spacing: -.1em;
+    }
+
+    .dog-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .dog-stage {
+      min-height: 365px;
+      display: grid;
+      place-items: center;
+      position: relative;
+      border-radius: 18px;
+      background: rgba(255,253,248,.55);
+      border: 1px solid rgba(17,24,43,.1);
+      overflow: hidden;
+    }
+
+    .dog-stage::before,
+    .dog-stage::after {
+      content: '';
+      position: absolute;
+      width: 245px;
+      height: 245px;
+      border: 1px dashed rgba(17,24,43,.14);
+      border-radius: 50%;
+    }
+
+    .dog-stage::after {
+      width: 315px;
+      height: 315px;
+    }
+
+    .dog-svg {
+      position: relative;
+      z-index: 1;
+      width: min(250px,75%);
+      filter: drop-shadow(0 16px 12px rgba(16,23,43,.12));
+      animation: floatDog 3.6s ease-in-out infinite;
+    }
+
+    @keyframes floatDog {
+      0%,100% {
+        transform: translateY(0) rotate(-2deg);
+      }
+
+      50% {
+        transform: translateY(-8px) rotate(2deg);
+      }
+    }
+
+    .dog-sticker {
+      position: absolute;
+      z-index: 2;
+      top: 25px;
+      left: 25px;
+      padding: 9px 12px;
+      background: var(--gold);
+      color: var(--navy);
+      transform: rotate(-5deg);
+      font: 9px var(--mono);
+      letter-spacing: .1em;
+    }
+
+    .dog-copy h2 {
+      margin: 13px 0;
+      font: 700 clamp(37px,4.8vw,57px)/1.01 var(--serif);
+      letter-spacing: -.06em;
+    }
+
+    .dog-copy p {
+      max-width: 520px;
+      color: #4f5e5a;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .dog-message {
+      min-height: 62px;
+      margin: 18px 0 14px;
+      padding: 14px 16px;
+      border-left: 3px solid var(--red);
+      border-radius: 0 8px 8px 0;
+      background: rgba(255,253,248,.65);
+      color: var(--navy);
+      font: 600 14px/1.65 var(--serif);
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 5px 0 #050914;
+    }
+
+    .btn-dark:hover {
+      background: var(--red);
+      box-shadow: 0 5px 0 #63002a;
+    }
+
+    .dog-count {
+      margin-left: 12px;
+      color: #53645d;
+      font: 9px var(--mono);
+      letter-spacing: .1em;
+    }
+
+    /* BARCELONA SECTION */
+
+    .barca-section {
+      background: var(--paper);
+    }
+
+    .barca-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .barca-panel {
+      position: relative;
+      min-height: 260px;
+      padding: 26px;
+      border-radius: 14px;
+      overflow: hidden;
+      color: white;
+      background: linear-gradient(130deg,#071d3a,#0756a5);
+    }
+
+    .barca-panel:nth-child(2) {
+      background: linear-gradient(130deg,#43001f,#a50044);
+    }
+
+    .barca-panel::after {
+      content: 'FCB';
+      position: absolute;
+      right: -5px;
+      bottom: -44px;
+      color: rgba(255,255,255,.07);
+      font: 900 150px var(--sans);
+      letter-spacing: -.12em;
+    }
+
+    .barca-panel .panel-label {
+      position: relative;
+      z-index: 1;
+      color: var(--gold);
+      font: 9px var(--mono);
+      letter-spacing: .15em;
+    }
+
+    .barca-panel h3 {
+      position: relative;
+      z-index: 1;
+      max-width: 370px;
+      margin: 16px 0 10px;
+      font: 700 31px/1.05 var(--serif);
+      letter-spacing: -.04em;
+    }
+
+    .barca-panel p {
+      position: relative;
+      z-index: 1;
+      max-width: 390px;
+      color: #d4dced;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .barca-panel .number {
+      position: absolute;
+      z-index: 1;
+      top: 20px;
+      right: 26px;
+      color: var(--gold);
+      font: 900 62px/.9 var(--sans);
+    }
+
+    .boost-output {
+      position: relative;
+      z-index: 2;
+      min-height: 45px;
+      margin-top: 16px;
+      color: var(--gold);
+      font: 11px/1.7 var(--mono);
+    }
+
+    .barca-panel .btn {
+      position: relative;
+      z-index: 2;
+      margin-top: 8px;
+      color: var(--navy);
+      background: var(--gold);
+    }
+
+    /* DANCE SECTION */
+
+    .dance-section {
+      background: var(--navy);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dance-section::before {
+      content: 'COMEBACK';
+      position: absolute;
+      bottom: -55px;
+      left: -18px;
+      color: rgba(255,255,255,.035);
+      font: 900 clamp(100px,18vw,220px)/.9 var(--sans);
+      letter-spacing: -.1em;
+    }
+
+    .dance-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr .85fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .dance-section .eyebrow {
+      color: var(--gold);
+    }
+
+    .dance-section .section-head h2,
+    .dance-copy h2 {
+      color: white;
+    }
+
+    .dance-copy h2 {
+      max-width: 560px;
+      margin: 13px 0;
+      font: 700 clamp(38px,5vw,59px)/1 var(--serif);
+      letter-spacing: -.06em;
+    }
+
+    .dance-copy p {
+      max-width: 540px;
+      color: #bac5d9;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .dance-note {
+      margin-top: 20px;
+      display: inline-flex;
+      gap: 9px;
+      align-items: center;
+      padding: 10px 13px;
+      border: 1px solid rgba(237,187,0,.35);
+      border-radius: 7px;
+      color: var(--gold);
+      font: 9px var(--mono);
+      letter-spacing: .08em;
+    }
+
+    .dance-machine {
+      min-height: 310px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 17px;
+      border: 1px solid rgba(255,255,255,.15);
+      background: linear-gradient(145deg,rgba(255,255,255,.1),rgba(255,255,255,.035));
+    }
+
+    .disco {
+      width: 105px;
+      height: 105px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: conic-gradient(var(--gold),var(--red),var(--blue),var(--gold));
+      box-shadow: 0 0 0 12px rgba(255,255,255,.04),0 0 45px rgba(237,187,0,.18);
+      font-size: 43px;
+    }
+
+    .dance-machine h3 {
+      margin: 21px 0 7px;
+      font: 700 22px var(--serif);
+    }
+
+    .dance-machine p {
+      max-width: 290px;
+      margin: 0;
+      color: #aebbd3;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .dance-machine .btn {
+      margin-top: 18px;
+    }
+
+    .dance-reveal {
+      min-height: 28px;
+      margin-top: 13px;
+      color: var(--gold);
+      text-align: center;
+      font: 10px/1.6 var(--mono);
+    }
+
+    /* BROOKLYN NINE-NINE SECTION */
+
+    .precinct {
+      background: #eee7dc;
+    }
+
+    .precinct-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 17px;
+    }
+
+    .briefing-card {
+      padding: 27px;
+      border-radius: 13px;
+      background: var(--navy);
+      color: white;
+    }
+
+    .briefing-card .tiny {
+      color: var(--gold);
+      font: 9px var(--mono);
+      letter-spacing: .13em;
+    }
+
+    .briefing-card h3 {
+      margin: 12px 0;
+      font: 700 28px var(--serif);
+    }
+
+    .briefing-card p {
+      color: #c2cce0;
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+    .briefing-card blockquote {
+      margin: 18px 0 0;
+      padding-left: 15px;
+      border-left: 2px solid var(--red);
+      color: #fff2c5;
+      font: italic 16px/1.6 var(--serif);
+    }
+
+    .mood-card {
+      padding: 27px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--paper);
+    }
+
+    .mood-card h3 {
+      margin: 10px 0 5px;
+      font: 700 24px var(--serif);
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .moods {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .mood {
+      min-height: 78px;
+      padding: 10px 5px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: white;
+      cursor: pointer;
+      color: var(--ink);
+      transition: .2s;
+    }
+
+    .mood:hover,
+    .mood.active {
+      border-color: var(--blue);
+      background: var(--blue-light);
+      transform: translateY(-2px);
+    }
+
+    .mood span {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .mood small {
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .mood-result {
+      display: none;
+      min-height: 52px;
+      margin-top: 14px;
+      padding: 11px 13px;
+      border-left: 3px solid var(--red);
+      background: #fff6e5;
+      color: var(--ink);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .mood-result.show {
+      display: block;
+      animation: pop .25s ease both;
+    }
+
+    /* 10 THINGS SECTION */
+
+    .evidence-layout {
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .evidence-intro {
+      position: sticky;
+      top: 25px;
+    }
+
+    .evidence-intro h2 {
+      margin: 13px 0;
+      font: 700 clamp(40px,5vw,60px)/.98 var(--serif);
+      letter-spacing: -.065em;
+    }
+
+    .evidence-intro h2 span {
+      color: var(--red);
+    }
+
+    .evidence-intro p {
+      max-width: 300px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+    .stamp-note {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 9px 11px;
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--blue);
+      transform: rotate(-3deg);
+      font: 9px var(--mono);
+    }
+
+    .evidence-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .evidence {
+      display: grid;
+      grid-template-columns: 39px 1fr 20px;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: rgba(255,253,248,.82);
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .evidence:hover {
+      transform: translateX(4px);
+      border-color: rgba(7,86,165,.4);
+    }
+
+    .evidence.open {
+      background: white;
+      border-color: var(--blue);
+    }
+
+    .ev-num {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #f4e6c8;
+      color: var(--red);
+      font: 10px var(--mono);
+    }
+
+    .evidence:nth-child(3n) .ev-num {
+      background: var(--blue-light);
+    }
+
+    .ev-title {
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .ev-detail {
+      display: none;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    .evidence.open .ev-detail {
+      display: block;
+      animation: pop .2s ease both;
+    }
+
+    .ev-plus {
+      color: var(--red);
+      font-size: 18px;
+      transition: transform .2s;
+    }
+
+    .evidence.open .ev-plus {
+      transform: rotate(45deg);
+    }
+
+    @keyframes pop {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* PERSONAL LETTER */
+
+    .letter-section {
+      background: var(--red);
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .letter-section::after {
+      content: '♡';
+      position: absolute;
+      right: 2%;
+      bottom: -145px;
+      color: rgba(255,255,255,.07);
+      font: 400 400px var(--serif);
+    }
+
+    .letter-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .letter-art {
+      min-height: 320px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: #e8c0cf;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .letter-art::before,
+    .letter-art::after {
+      content: '';
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border: 1px solid rgba(17,24,43,.16);
+      border-radius: 50%;
+    }
+
+    .letter-art::after {
+      width: 280px;
+      height: 280px;
+    }
+
+    .envelope {
+      width: 205px;
+      height: 140px;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      background: #fff9eb;
+      box-shadow: 12px 16px 0 rgba(17,24,43,.13);
+      transform: rotate(-7deg);
+    }
+
+    .envelope::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      border-left: 102px solid transparent;
+      border-right: 102px solid transparent;
+      border-top: 76px solid #f0dfc2;
+    }
+
+    .envelope::after {
+      content: 'A';
+      position: absolute;
+      bottom: 25px;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--red);
+      font: 700 20px var(--serif);
+    }
+
+    .letter-sticker {
+      position: absolute;
+      top: 24px;
+      right: 22px;
+      padding: 9px 11px;
+      color: var(--navy);
+      background: var(--gold);
+      transform: rotate(5deg);
+      font: 9px var(--mono);
+      letter-spacing: .1em;
+    }
+
+    .letter-copy .eyebrow {
+      color: var(--gold);
+    }
+
+    .letter-copy h2 {
+      margin: 14px 0;
+      font: 700 clamp(36px,4.8vw,57px)/1 var(--serif);
+      letter-spacing: -.06em;
+    }
+
+    .letter-copy p {
+      max-width: 530px;
+      color: #f1cfdd;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .letter-copy .btn {
+      margin-top: 11px;
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    /* LETTER MODAL */
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(5,10,22,.72);
+      backdrop-filter: blur(6px);
+    }
+
+    .modal-backdrop.show {
+      display: grid;
+    }
+
+    .letter-modal {
+      position: relative;
+      width: min(610px,100%);
+      max-height: 86vh;
+      overflow: auto;
+      padding: 37px clamp(25px,5vw,48px);
+      border-radius: 12px;
+      color: var(--ink);
+      background: #fffaf0;
+      box-shadow: 0 30px 100px rgba(0,0,0,.35);
+      animation: pop .28s ease both;
+    }
+
+    .letter-modal::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 22px;
+      width: 1px;
+      background: rgba(165,0,68,.22);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      border: 0;
+      background: none;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 25px;
+    }
+
+    .letter-modal h2 {
+      margin: 14px 0;
+      font: 700 36px var(--serif);
+    }
+
+    .letter-modal p {
+      color: #505a70;
+      font: 14px/1.95 var(--serif);
+    }
+
+    .letter-modal .signoff {
+      margin-top: 24px;
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .letter-modal .from {
+      color: #8991a2;
+      font: 9px var(--mono);
+      letter-spacing: .1em;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 28px 0 34px;
+      background: var(--navy);
+      color: white;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      color: #9eabc4;
+      font: 9px/1.8 var(--mono);
+      letter-spacing: .07em;
+    }
+
+    .footer-mark {
+      color: var(--gold);
+      font: 900 12px var(--mono);
+      letter-spacing: .12em;
+    }
+
+    /* TOAST MESSAGE */
+
+    .toast {
+      position: fixed;
+      z-index: 40;
+      bottom: 22px;
+      left: 50%;
+      width: max-content;
+      max-width: calc(100% - 30px);
+      padding: 13px 17px;
+      border-radius: 9px;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+      text-align: center;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%,18px);
+      transition: .25s;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translate(-50%,0);
+    }
+
+    /* RESPONSIVE DESIGN */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .dog-grid,
+      .dance-grid,
+      .letter-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 38px;
+      }
+
+      .match-card {
+        max-width: 570px;
+        transform: none;
+      }
+
+      .identity-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .dog-grid {
+        gap: 35px;
+      }
+
+      .dog-stage {
+        min-height: 300px;
+      }
+
+      .evidence-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .evidence-intro {
+        position: static;
+      }
+
+      .evidence-intro p {
+        max-width: 600px;
+      }
+
+      .letter-grid {
+        gap: 35px;
+      }
+
+      .letter-art {
+        min-height: 260px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .wrap {
+        width: min(100% - 30px,1180px);
+      }
+
+      .topbar-inner {
+        min-height: 66px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .top-status {
+        font-size: 8px;
+        padding: 8px;
+      }
+
+      .hero {
+        padding: 58px 0 52px;
+      }
+
+      .hero h1 {
+        font-size: clamp(48px,14vw,69px);
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 14px;
+      }
+
+      section {
+        padding: 59px 0;
+      }
+
+      .identity-grid,
+      .barca-grid,
+      .precinct-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .identity-card {
+        min-height: 205px;
+      }
+
+      .dog-stage {
+        min-height: 270px;
+      }
+
+      .barca-panel {
+        min-height: 245px;
+      }
+
+      .moods {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .match-card {
+        padding: 20px;
+      }
+
+      .team-icon {
+        width: 58px;
+        height: 58px;
+      }
+
+      .scoreline b {
+        font-size: 31px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="shell">
+  <!-- NAVIGATION -->
 
-<nav>
-    <div class="logo">a little <span>♡</span> corner</div>
-    <div class="nav-label">MADE WITH CARE · FOR ANUJA</div>
-</nav>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
 
-<!-- HERO -->
+      <a class="brand" href="#top" aria-label="Anuja's recovery page home">
+        <span class="brand-mark">A10</span>
+        <span>
+          THE ANUJA EDITION
+          <small>RECOVERY SEASON · SPECIAL ISSUE</small>
+        </span>
+      </a>
 
-<header class="hero">
-    <div class="hero-flower">🌷</div>
-    <div class="eyebrow">A little corner of the internet</div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#the-vibe">Her universe</a>
+        <a href="#dogs">Puppy corner</a>
+        <a href="#barca">Matchday</a>
+        <a href="#letter">A note</a>
+      </nav>
 
-    <h1>Hello,<br><em>Anuja.</em></h1>
+      <span class="top-status">FRIENDSHIP FIRST · ALWAYS</span>
 
-    <p class="hero-description">
-        A small website, a few silly things,
-        some entertainment and a couple of reminders
-        to take care of yourself.
-    </p>
-
-    <div class="hero-buttons">
-        <button class="btn primary" id="openLetter">
-            Open your letter ✉
-        </button>
-
-        <button class="btn secondary"
-        onclick="document.getElementById('comfort').scrollIntoView()">
-            Explore your corner ↓
-        </button>
     </div>
-</header>
+  </header>
 
+  <main id="top">
 
-<!-- DAILY REMINDER -->
+    <!-- HERO -->
 
-<section class="section">
-    <div class="card letter-card">
-        <div class="icon">☀️</div>
-        <h3>A little reminder for today</h3>
+    <section class="hero">
+      <div class="wrap hero-grid">
 
-        <p id="dailyMessage">
-            You don't have to do anything extraordinary today.
-            Just be gentle with yourself.
-        </p>
+        <div>
+          <div class="eyebrow">
+            A little internet care package · made for Anuja
+          </div>
 
-        <button class="btn secondary" id="newReminder">
-            Another reminder
-        </button>
-    </div>
-</section>
+          <h1>
+            Dear Anuja,<br>
+            the world can wait.
+            <em>You come first.</em>
+          </h1>
 
+          <p class="hero-copy">
+            This is not a generic “get well soon” page.
+            It's a tiny corner of the internet assembled around a few things
+            that make you <strong>you</strong>: dogs, dancing, Messi, Barça,
+            and a little Brooklyn Nine-Nine energy.
+            Today's only important fixture is getting some proper rest.
+          </p>
 
-<!-- FLOWER GARDEN -->
+          <div class="actions">
+            <a class="btn btn-gold" href="#the-vibe">
+              Enter Anuja's universe <span>↘</span>
+            </a>
 
-<section class="section">
-    <div class="section-heading">
-        <h2>Your little garden</h2>
-        <p>Pick a flower. There's a message in each one.</p>
-    </div>
+            <button class="btn btn-outline" id="surpriseBtn" type="button">
+              Surprise me ✦
+            </button>
+          </div>
 
-    <div class="card flower-garden">
-        <div class="flowers">
-            <button class="flower" data-flower="0">🌷</button>
-            <button class="flower" data-flower="1">🌼</button>
-            <button class="flower" data-flower="2">🌻</button>
-            <button class="flower" data-flower="3">🌸</button>
-            <button class="flower" data-flower="4">🌺</button>
+          <div class="fineprint">
+            NO REPLY REQUIRED · NO PRODUCTIVITY GOALS · JUST A LITTLE CARE
+          </div>
         </div>
 
-        <p class="flower-message" id="flowerMessage">
-            Every flower has something to say. ♡
-        </p>
-    </div>
-</section>
+        <!-- RECOVERY MATCH CARD -->
 
+        <aside class="match-card" aria-label="A playful recovery matchday card">
 
-<!-- COMFORT MENU -->
+          <div class="match-head">
+            <span>RECOVERY LEAGUE · MATCHDAY 01</span>
+            <span class="live-pill">● IN PROGRESS</span>
+          </div>
 
-<section class="section" id="comfort">
-    <div class="section-heading">
-        <h2>Your comfort menu</h2>
-        <p>Choose whatever you feel like right now.</p>
-    </div>
+          <div class="versus">
 
-    <div class="comfort-grid">
-
-        <button class="comfort-btn" data-type="smile">
-            <strong>☀ Make me smile</strong>
-            <small>A tiny dose of happiness</small>
-        </button>
-
-        <button class="comfort-btn" data-type="care">
-            <strong>🌿 Be gentle with me</strong>
-            <small>Some reassuring words</small>
-        </button>
-
-        <button class="comfort-btn" data-type="fun">
-            <strong>🎈 Distract me</strong>
-            <small>Something silly and random</small>
-        </button>
-
-        <button class="comfort-btn" data-type="company">
-            <strong>💬 I need company</strong>
-            <small>A friendly reminder</small>
-        </button>
-
-    </div>
-
-    <div class="message-display">
-        <p id="comfortMessage" aria-live="polite">
-            Choose something. I've got a few things for you.
-        </p>
-    </div>
-</section>
-
-
-<!-- BROOKLYN NINE-NINE -->
-
-<section class="section">
-    <div class="card b99">
-
-        <div class="b99-header">
-            <div class="badge">SPECIAL ENTERTAINMENT UNIT</div>
-            <h2>THE NINE-NINE! 🚔</h2>
-            <p class="b99-subtitle">
-                Brooklyn's finest. Anuja's temporary entertainment department.
-            </p>
-        </div>
-
-        <div class="precinct-board">
-            <h3>Meet the precinct</h3>
-
-            <div class="character-grid">
-
-                <div class="character">
-                    <div class="emoji">🕵️</div>
-                    <strong>Jake Peralta</strong>
-                    <small>Chaos specialist</small>
-                </div>
-
-                <div class="character">
-                    <div class="emoji">👮</div>
-                    <strong>Amy Santiago</strong>
-                    <small>Organised genius</small>
-                </div>
-
-                <div class="character">
-                    <div class="emoji">🧊</div>
-                    <strong>Captain Holt</strong>
-                    <small>Professional seriousness</small>
-                </div>
-
-                <div class="character">
-                    <div class="emoji">💪</div>
-                    <strong>Terry Jeffords</strong>
-                    <small>Snack enthusiast</small>
-                </div>
-
-                <div class="character">
-                    <div class="emoji">💃</div>
-                    <strong>Rosa Diaz</strong>
-                    <small>Mysterious legend</small>
-                </div>
-
-                <div class="character">
-                    <div class="emoji">🎭</div>
-                    <strong>Charles Boyle</strong>
-                    <small>Unmatched enthusiasm</small>
-                </div>
-
+            <div class="team">
+              <div class="team-icon">💙❤️</div>
+              <strong>TEAM ANUJA</strong>
+              <small>THE HOME SIDE</small>
             </div>
+
+            <div class="vs">vs.</div>
+
+            <div class="team">
+              <div class="team-icon">🌡️</div>
+              <strong>THE FEVER</strong>
+              <small>UNINVITED VISITOR</small>
+            </div>
+
+          </div>
+
+          <div class="scoreline">
+            <b>10</b>
+            <span>—</span>
+            <b>0</b>
+            <span>UNOFFICIAL SCORE</span>
+          </div>
+
+          <div class="match-footer">
+            <span>MAN OF THE MATCH</span>
+            <b>ANUJA · ALWAYS</b>
+          </div>
+
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- MOVING ANNOUNCEMENT -->
+
+    <div class="ticker" aria-label="A friendly announcement">
+      <div class="ticker-track">
+
+        <span>
+          VISCA ANUJA <b>✦</b>
+          DOGS MAKE EVERYTHING BETTER <b>✦</b>
+          REST IS THE GAME PLAN <b>✦</b>
+          NINE-NINE <b>✦</b>
+          THE COMEBACK WILL BE ICONIC <b>✦</b>
+        </span>
+
+        <span>
+          VISCA ANUJA <b>✦</b>
+          DOGS MAKE EVERYTHING BETTER <b>✦</b>
+          REST IS THE GAME PLAN <b>✦</b>
+          NINE-NINE <b>✦</b>
+          THE COMEBACK WILL BE ICONIC <b>✦</b>
+        </span>
+
+      </div>
+    </div>
+
+    <!-- ANUJA'S INTERESTS -->
+
+    <section id="the-vibe">
+      <div class="wrap">
+
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">01 / The Anuja universe</div>
+            <h2>Four things. One very cool human.</h2>
+          </div>
+
+          <p>
+            A mini moodboard built from the things you love.
+            No made-up memories, no invented inside jokes—just a few
+            very accurate observations.
+          </p>
         </div>
 
-        <div class="precinct-board">
-            <h3>Today's precinct assignment</h3>
+        <div class="identity-grid">
+
+          <article class="identity-card" data-number="01">
+            <div class="symbol">🐾</div>
+            <h3>Dog person, certified.</h3>
+            <p>
+              Possibly the only category of creature capable of
+              improving a day without saying a single word.
+            </p>
+            <span class="tag">Chief paw officer</span>
+          </article>
+
+          <article class="identity-card" data-number="02">
+            <div class="symbol">💃</div>
+            <h3>Born for the beat.</h3>
+            <p>
+              The dance floor is temporarily on pause.
+              It has been informed that the lead performer is recovering.
+            </p>
+            <span class="tag">Dance-floor pending</span>
+          </article>
+
+          <article class="identity-card" data-number="10">
+            <div class="symbol">⚽</div>
+            <h3>Messi magic.</h3>
+            <p>
+              Some people make football look complicated.
+              Some make it look like art. You know which one we're talking about.
+            </p>
+            <span class="tag">Number 10 energy</span>
+          </article>
+
+          <article class="identity-card" data-number="FCB">
+            <div class="symbol">🔵🔴</div>
+            <h3>Blaugrana heart.</h3>
+            <p>
+              A little Barça loyalty, a lot of passion,
+              and absolutely no tolerance for a boring matchday.
+            </p>
+            <span class="tag">Més que un club</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PUPPY SECTION -->
+
+    <section class="dog-section" id="dogs">
+      <div class="wrap dog-grid">
+
+        <div class="dog-stage">
+
+          <span class="dog-sticker">
+            PUPPY POST · PRIORITY MAIL
+          </span>
+
+          <!-- ORIGINAL SVG PUPPY ILLUSTRATION -->
+
+          <svg class="dog-svg" viewBox="0 0 260 250" role="img" aria-label="A friendly illustrated puppy">
+
+            <ellipse cx="130" cy="226" rx="78" ry="12" fill="#17233d" opacity=".10" />
+
+            <path d="M72 90 C34 67 28 114 53 150 C67 170 84 158 91 139Z" fill="#9b6847" />
+            <path d="M188 90 C226 67 232 114 207 150 C193 170 176 158 169 139Z" fill="#9b6847" />
+
+            <ellipse cx="130" cy="132" rx="79" ry="83" fill="#c98d5e" />
+            <ellipse cx="130" cy="151" rx="57" ry="48" fill="#f1d8b8" />
+
+            <ellipse cx="101" cy="124" rx="8" ry="11" fill="#17233d" />
+            <ellipse cx="159" cy="124" rx="8" ry="11" fill="#17233d" />
+
+            <circle cx="103" cy="120" r="2.5" fill="white" />
+            <circle cx="161" cy="120" r="2.5" fill="white" />
+
+            <ellipse cx="130" cy="151" rx="12" ry="9" fill="#17233d" />
+
+            <path d="M130 160 Q119 174 109 163 M130 160 Q141 174 151 163"
+              fill="none" stroke="#17233d" stroke-width="3" stroke-linecap="round" />
+
+            <path d="M66 195 Q130 175 194 195 L205 224 Q130 241 55 224Z" fill="#a50044" />
+            <path d="M112 188 L130 205 L148 188" fill="#edbb00" />
+            <circle cx="130" cy="207" r="7" fill="#edbb00" />
+
+            <path d="M66 102 Q80 84 92 103"
+              fill="none" stroke="#f1d8b8" stroke-width="8" stroke-linecap="round" opacity=".5" />
+
+          </svg>
+
+        </div>
+
+        <div class="dog-copy">
+
+          <div class="eyebrow">02 / The puppy corner</div>
+
+          <h2>An emergency delivery of pawsitivity.</h2>
+
+          <p>
+            We regret to inform you that the official dog department
+            has reviewed your current situation and prescribed one
+            (1) imaginary puppy, unlimited virtual head pats,
+            and absolutely no expectations of being productive.
+          </p>
+
+          <div class="dog-message" id="dogMessage" aria-live="polite">
+            “Hello Anuja. I heard you weren't feeling well.
+            I have brought absolutely no solutions, only paws.”
+          </div>
+
+          <button class="btn btn-dark" id="puppyBtn" type="button">
+            Send another puppy message <span>🐾</span>
+          </button>
+
+          <span class="dog-count" id="dogCount">
+            PUPPY DELIVERY 01 / 08
+          </span>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MESSI AND BARCELONA -->
+
+    <section class="barca-section" id="barca">
+      <div class="wrap">
+
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">03 / Matchday headquarters</div>
+            <h2>One for the number 10.</h2>
+          </div>
+
+          <p>
+            Every great comeback needs a little magic.
+            This section is dedicated to Messi, Barça, and the belief
+            that the best moments are worth waiting for.
+          </p>
+        </div>
+
+        <div class="barca-grid">
+
+          <article class="barca-panel">
+
+            <span class="panel-label">THE NUMBER 10 DEPARTMENT</span>
+            <span class="number">10</span>
+
+            <h3>Calm feet. Brilliant timing. Magic.</h3>
 
             <p>
-                Click below to discover which department
-                you've been assigned to today.
+              A little Messi-inspired reminder:
+              you don't have to rush the comeback.
+              Take the space, find your rhythm, and return when you're ready.
             </p>
 
-            <div class="detective-result" id="detectiveResult">
-                Awaiting your assignment...
-            </div>
-
-            <div style="text-align:center;margin-top:15px">
-                <button class="btn blue-btn" id="assignDetective">
-                    Assign me a role!
-                </button>
-            </div>
-        </div>
-
-        <div class="b99-fun">
-
-            <button id="b99Joke">
-                <strong>😂 Precinct humour</strong>
-                <small>Get a random detective joke</small>
+            <button class="btn" id="messiBtn" type="button">
+              Give me a number 10 boost ↗
             </button>
 
-            <button id="b99Case">
-                <strong>🔎 Solve a tiny case</strong>
-                <small>Test your detective skills</small>
-            </button>
+            <div class="boost-output" id="messiOutput" aria-live="polite"></div>
 
-        </div>
+          </article>
 
-        <div class="detective-result" id="b99Output" aria-live="polite">
-            The precinct is ready for action.
-        </div>
+          <article class="barca-panel">
 
-        <p style="text-align:center;margin-top:17px;font-size:10px">
-            A fan-made entertainment corner inspired by Brooklyn Nine-Nine.
-        </p>
+            <span class="panel-label">THE BLAUGRANA BULLETIN</span>
+            <span class="number">FCB</span>
 
-    </div>
-</section>
-
-
-<!-- TEN THINGS I HATE ABOUT BEING SICK -->
-
-<section class="section">
-    <div class="card ten-things">
-
-        <div class="ten-things-heading">
-            <div class="icon">🎬</div>
-
-            <h2>10 Things I Hate About Being Sick</h2>
+            <h3>Today's formation: rest, recover, repeat.</h3>
 
             <p>
-                A tiny movie-inspired countdown.
-                Tap each one to reveal the complaint.
-            </p>
-        </div>
-
-        <div class="ten-list">
-
-            <div class="ten-item">
-                <button aria-expanded="false">
-                    <span>01.</span> The endless sneezing
-                </button>
-                <p>One sneeze is fine. Fifteen consecutive sneezes is a personal attack.</p>
-            </div>
-
-            <div class="ten-item">
-                <button aria-expanded="false">
-                    <span>02.</span> Food tasting weird
-                </button>
-                <p>When even your favourite snack decides to disappoint you.</p>
-            </div>
-
-            <div class="ten-item">
-                <button aria-expanded="false">
-                    <span>03.</span> Missing your favourite shows
-                </button>
-                <p>Having a watchlist of 47 things and the energy to watch approximately zero.</p>
-            </div>
-
-            <div class="ten-item">
-                <button aria-expanded="false">
-                    <span>04.</span> The dramatic temperature changes
-                </button>
-                <p>Hot, cold, hot again. The weather inside your blanket has its own climate system.</p>
-            </div>
-
-            <div class="ten-item">
-                <button aria-expanded="false">
-                    <span>05.</span> Everyone asking if you're okay
-                </button>
-                <p>Yes, I'm okay. No, I don't know when I'll be okay-er.</p>
-            </div>
-
-            <div class="ten-item">
-                <button aria-expanded="false">
-                    <span>06.</span> Having absolutely no energy
-                </button>
-                <p>Getting up to collect a glass of water suddenly becomes a major expedition.</p>
-            </div>
-
-            <div class="ten-item">
-                <button aria-expanded="false">
-                    <span>07.</span> The boring food suggestions
-                </button>
-                <p>Everyone becomes a professional nutrition consultant overnight.</p>
-            </div>
-
-            <div class="ten-item">
-                <button aria-expanded="false">
-                    <span>08.</span> Losing track of time
-                </button>
-                <p>Is it morning? Afternoon? Have I watched the same episode twice?</p>
-            </div>
-
-            <div class="ten-item">
-                <button aria-expanded="false">
-                    <span>09.</span> Cancelled plans
-                </button>
-                <p>The most disappointing notification is your own body requesting a postponement.</p>
-            </div>
-
-            <div class="ten-item">
-                <button aria-expanded="false">
-                    <span>10.</span> The waiting game
-                </button>
-                <p>Just waiting for the day when everything feels normal again.</p>
-            </div>
-
-        </div>
-
-        <p class="movie-note">
-            At least the recovery arc will be legendary. 🎬
-        </p>
-
-        <p style="text-align:center;font-size:10px;margin-top:10px">
-            An original humorous list, inspired by the movie's title.
-        </p>
-
-    </div>
-</section>
-
-
-<!-- LITTLE NOTES -->
-
-<section class="section">
-    <div class="section-heading">
-        <h2>Little things to remember</h2>
-        <p>A few simple reminders for everyday life.</p>
-    </div>
-
-    <div class="notes-grid">
-
-        <div class="note">
-            <span>🌻</span>
-            <p>Ordinary days can be pretty wonderful.</p>
-            <small>NOTE NO. 01</small>
-        </div>
-
-        <div class="note">
-            <span>☁️</span>
-            <p>You don't need to be productive every second.</p>
-            <small>NOTE NO. 02</small>
-        </div>
-
-        <div class="note">
-            <span>📚</span>
-            <p>There's always something new to discover.</p>
-            <small>NOTE NO. 03</small>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- STAR GAME -->
-
-<section class="section">
-    <div class="card star-card">
-
-        <div class="section-heading">
-            <h2>Pick a little star ✨</h2>
-            <p>Three stars. Three little surprises.</p>
-        </div>
-
-        <div class="stars">
-            <button class="star">⭐</button>
-            <button class="star">✨</button>
-            <button class="star">🌟</button>
-        </div>
-
-        <p class="star-result" id="starResult">
-            Go on. Pick one!
-        </p>
-
-    </div>
-</section>
-
-
-<!-- CHECK-IN -->
-
-<section class="section">
-    <div class="card checkin">
-
-        <div class="icon">☁️</div>
-
-        <div class="section-heading">
-            <h2>How are you feeling, Anuja?</h2>
-            <p>No pressure. Just a little check-in.</p>
-        </div>
-
-        <div class="feelings">
-
-            <button class="feeling" data-feeling="better">
-                A little better ☀️
-            </button>
-
-            <button class="feeling" data-feeling="same">
-                Taking it slow 🌿
-            </button>
-
-            <button class="feeling" data-feeling="rough">
-                Not my best day ☁️
-            </button>
-
-        </div>
-
-        <p class="checkin-status" id="checkinStatus" aria-live="polite">
-            Share an update whenever you want.
-        </p>
-
-        <button class="btn green-btn" id="shareCheckin" disabled>
-            Share my check-in
-        </button>
-
-        <p style="font-size:10px;margin-top:15px">
-            Your selection stays on this device unless you share it.
-        </p>
-
-    </div>
-</section>
-
-
-<!-- WELLNESS CHECKLIST -->
-
-<section class="section">
-    <div class="grid">
-
-        <div class="card wellness">
-
-            <div class="icon">🍵</div>
-            <h3>A little self-care list</h3>
-
-            <p>Gentle reminders. No pressure to complete everything.</p>
-
-            <ul class="task-list">
-                <li><label><input type="checkbox" class="task"> Have some water</label></li>
-                <li><label><input type="checkbox" class="task"> Get comfortable</label></li>
-                <li><label><input type="checkbox" class="task"> Take a break from screens</label></li>
-                <li><label><input type="checkbox" class="task"> Have something nourishing if you can</label></li>
-                <li><label><input type="checkbox" class="task"> Give yourself time to rest</label></li>
-            </ul>
-
-            <div class="progress">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
-
-            <p class="progress-text" id="progressText">
-                0 of 5 little things done.
+              Official team instructions:
+              keep the pressure low, let the body recover,
+              and leave the dramatic last-minute comeback for another day.
             </p>
 
-        </div>
-
-        <div class="card">
-            <div class="icon">🧸</div>
-            <h3>Official permission slip</h3>
-
-            <p>This is your official permission slip to:</p>
-
-            <ul class="task-list">
-                <li>✓ Ignore unnecessary responsibilities.</li>
-                <li>✓ Take breaks whenever needed.</li>
-                <li>✓ Watch your favourite show.</li>
-                <li>✓ Ask someone for help.</li>
-                <li>✓ Have a quiet day.</li>
-            </ul>
-
-            <p style="color:#b77b6d;margin-top:15px">
-                Signed, the Department of Taking It Easy.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- MEMORY CORNER -->
-
-<section class="section">
-
-    <div class="section-heading">
-        <h2>A little corner of thoughts</h2>
-        <p>Some things worth remembering.</p>
-    </div>
-
-    <div class="card memory-card">
-
-        <div class="memory-item">
-            <button aria-expanded="false">
-                🌷 A little thing to appreciate +
+            <button class="btn" id="barcaBtn" type="button">
+              Check the team bulletin ↗
             </button>
+
+            <div class="boost-output" id="barcaOutput" aria-live="polite"></div>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DANCING -->
+
+    <section class="dance-section" id="dance">
+      <div class="wrap dance-grid">
+
+        <div class="dance-copy">
+
+          <div class="eyebrow">04 / The dance-floor department</div>
+
+          <h2>The comeback choreography is on hold.</h2>
+
+          <p>
+            The music is waiting. The imaginary spotlight is waiting.
+            The dance floor has been informed that its favourite person
+            is taking a well-earned break.
+            This is a celebration for <strong>when you're feeling better</strong>—
+            not a request to get up and dance right now.
+          </p>
+
+          <div class="dance-note">
+            ✦ CURRENT STATUS: REST MODE · COMEBACK: PENDING
+          </div>
+
+        </div>
+
+        <div class="dance-machine">
+
+          <div class="disco" aria-hidden="true">💃</div>
+
+          <h3>Unlock the comeback playlist</h3>
+
+          <p>
+            Pick a future dance-floor mood.
+            The only required move today is getting comfortable.
+          </p>
+
+          <button class="btn btn-gold" id="danceBtn" type="button">
+            Choose my comeback mood
+          </button>
+
+          <div class="dance-reveal" id="danceReveal" aria-live="polite">
+            WAITING FOR THE GREEN LIGHT…
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BROOKLYN NINE-NINE -->
+
+    <section class="precinct" id="precinct">
+      <div class="wrap">
+
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">05 / The recovery precinct</div>
+            <h2>Brooklyn Nine-Nine has a statement.</h2>
+          </div>
+
+          <p>
+            A little detective-show energy, because a fever this annoying
+            deserves a full investigation. The squad is taking the case
+            very seriously. Mostly.
+          </p>
+        </div>
+
+        <div class="precinct-grid">
+
+          <article class="briefing-card">
+
+            <div class="tiny">
+              CAPTAIN'S OFFICIAL MEMO · PRECINCT 99
+            </div>
+
+            <h3>Today's orders are simple.</h3>
+
             <p>
-                The little things people do can make an ordinary day
-                a lot better. Never underestimate them.
+              Rest when you need to. Keep water nearby.
+              Let someone at home know how you're feeling.
+              Follow the advice of a trusted adult or healthcare professional.
+              There will be no awards for trying to do too much while unwell.
             </p>
+
+            <blockquote>
+              “The case can wait. The detective needs a day off.”
+            </blockquote>
+
+          </article>
+
+          <article class="mood-card">
+
+            <div class="eyebrow">OPTIONAL CHECK-IN</div>
+
+            <h3>How's our lead character?</h3>
+
+            <p class="muted">
+              Tap whichever feels closest.
+              This answer stays in this browser tab; it is not sent to anyone.
+            </p>
+
+            <div class="moods" id="moods">
+
+              <button class="mood" type="button"
+                data-message="Today's mission: maximum comfort, minimum effort. The squad has got the paperwork."
+                aria-label="Feeling exhausted">
+                <span>🥱</span>
+                <small>Exhausted</small>
+              </button>
+
+              <button class="mood" type="button"
+                data-message="A little progress is still progress. No need to speed-run recovery."
+                aria-label="A little better">
+                <span>🙂</span>
+                <small>A little better</small>
+              </button>
+
+              <button class="mood" type="button"
+                data-message="Good news. Please continue taking it easy; the fever does not get to negotiate."
+                aria-label="Getting there">
+                <span>🌤️</span>
+                <small>Getting there</small>
+              </button>
+
+              <button class="mood" type="button"
+                data-message="The precinct is quietly celebrating. Still, take care of yourself and enjoy the calm."
+                aria-label="Feeling okay">
+                <span>✨</span>
+                <small>Feeling okay</small>
+              </button>
+
+            </div>
+
+            <div class="mood-result" id="moodResult" role="status"></div>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TEN THINGS I HATE ABOUT THIS FEVER -->
+
+    <section id="evidence">
+      <div class="wrap evidence-layout">
+
+        <div class="evidence-intro">
+
+          <div class="eyebrow">06 / Evidence against the fever</div>
+
+          <h2>
+            10 things I hate about <span>this fever.</span>
+          </h2>
+
+          <p>
+            A tiny nod to a certain movie title.
+            Tap each item to inspect the evidence.
+            The suspect has declined to comment.
+          </p>
+
+          <span class="stamp-note">
+            EXHIBIT A · THE FEVER IS GUILTY
+          </span>
+
         </div>
 
-        <div class="memory-item">
-            <button aria-expanded="false">
-                ☀️ Something to look forward to +
-            </button>
-            <p>
-                More peaceful mornings, good food, funny conversations,
-                new episodes and plenty of reasons to smile.
-            </p>
+        <div class="evidence-list" id="evidenceList">
+
+          <article class="evidence">
+            <span class="ev-num">01</span>
+            <div>
+              <div class="ev-title">It has absolutely no sense of timing.</div>
+              <div class="ev-detail">
+                A very poorly scheduled guest. Could it not have checked the calendar first?
+              </div>
+            </div>
+            <span class="ev-plus">＋</span>
+          </article>
+
+          <article class="evidence">
+            <span class="ev-num">02</span>
+            <div>
+              <div class="ev-title">It has interrupted puppy appreciation hours.</div>
+              <div class="ev-detail">
+                Dogs are an essential public service. This interruption is unacceptable.
+              </div>
+            </div>
+            <span class="ev-plus">＋</span>
+          </article>
+
+          <article class="evidence">
+            <span class="ev-num">03</span>
+            <div>
+              <div class="ev-title">It has postponed dance-floor business.</div>
+              <div class="ev-detail">
+                The choreography department has filed a formal complaint.
+                The comeback will happen when you're well.
+              </div>
+            </div>
+            <span class="ev-plus">＋</span>
+          </article>
+
+          <article class="evidence">
+            <span class="ev-num">04</span>
+            <div>
+              <div class="ev-title">It has no respect for matchday.</div>
+              <div class="ev-detail">
+                The fever clearly does not understand the importance of a good Barça day.
+              </div>
+            </div>
+            <span class="ev-plus">＋</span>
+          </article>
+
+          <article class="evidence">
+            <span class="ev-num">05</span>
+            <div>
+              <div class="ev-title">It is acting like it owns the place.</div>
+              <div class="ev-detail">
+                Nobody invited it. Nobody gave it a key.
+                Yet here it is, behaving like it pays rent.
+              </div>
+            </div>
+            <span class="ev-plus">＋</span>
+          </article>
+
+          <article class="evidence">
+            <span class="ev-num">06</span>
+            <div>
+              <div class="ev-title">It has put the number 10 on the bench.</div>
+              <div class="ev-detail">
+                Temporary substitution only.
+                Anuja remains the star player; recovery comes first.
+              </div>
+            </div>
+            <span class="ev-plus">＋</span>
+          </article>
+
+          <article class="evidence">
+            <span class="ev-num">07</span>
+            <div>
+              <div class="ev-title">It has made ordinary things feel like side quests.</div>
+              <div class="ev-detail">
+                The only side quest approved by the precinct is finding the comfiest possible position.
+              </div>
+            </div>
+            <span class="ev-plus">＋</span>
+          </article>
+
+          <article class="evidence">
+            <span class="ev-num">08</span>
+            <div>
+              <div class="ev-title">It is stealing all the good energy.</div>
+              <div class="ev-detail">
+                That energy belongs to Anuja.
+                The fever has been notified that this is a temporary arrangement.
+              </div>
+            </div>
+            <span class="ev-plus">＋</span>
+          </article>
+
+          <article class="evidence">
+            <span class="ev-num">09</span>
+            <div>
+              <div class="ev-title">It has made replying to messages optional.</div>
+              <div class="ev-detail">
+                Actually, this is not a crime.
+                Replies can wait. Rest is more important.
+              </div>
+            </div>
+            <span class="ev-plus">＋</span>
+          </article>
+
+          <article class="evidence">
+            <span class="ev-num">10</span>
+            <div>
+              <div class="ev-title">It is keeping a lovely human away from her usual life.</div>
+              <div class="ev-detail">
+                This is the biggest offence of all.
+                Take your time, Anuja.
+                Your people and your favourite things will be here.
+              </div>
+            </div>
+            <span class="ev-plus">＋</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PERSONAL LETTER -->
+
+    <section class="letter-section" id="letter">
+      <div class="wrap letter-grid">
+
+        <div class="letter-art" aria-hidden="true">
+          <span class="letter-sticker">SEALED WITH CARE</span>
+          <div class="envelope"></div>
         </div>
 
-        <div class="memory-item">
-            <button aria-expanded="false">
-                💬 A useful reminder +
-            </button>
-            <p>
-                Asking for help is perfectly okay.
-                Nobody has to handle everything alone.
-            </p>
-        </div>
+        <div class="letter-copy">
 
-        <div class="memory-item">
-            <button aria-expanded="false">
-                🌻 A little piece of advice +
-            </button>
-            <p>
-                Be patient with yourself.
-                Everyone has days when things don't go as planned.
-            </p>
+          <div class="eyebrow">07 / A note from a friend</div>
+
+          <h2>One thing without the jokes.</h2>
+
+          <p>
+            I wanted to make you something that felt a little more thoughtful
+            than a standard “get well soon” message.
+            Open this whenever you feel like it.
+            There's no reply expected, no hidden assignment,
+            and absolutely no pressure.
+          </p>
+
+          <button class="btn" id="openLetter" type="button">
+            Open your letter <span>↗</span>
+          </button>
+
         </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LETTER POPUP -->
+
+  <div class="modal-backdrop" id="letterModal"
+       role="dialog" aria-modal="true" aria-labelledby="letterTitle">
+
+    <article class="letter-modal">
+
+      <button class="close-modal" id="closeLetter"
+              type="button" aria-label="Close letter">
+        ×
+      </button>
+
+      <div class="eyebrow">A small note for Anuja</div>
+
+      <h2 id="letterTitle">Hey, Anuja.</h2>
+
+      <p>
+        I know being ill can make even an ordinary day feel long.
+        So I made you this little corner of the internet:
+        a bit of puppy energy, a bit of football, a future dance-floor
+        comeback, and a little detective-show nonsense.
+      </p>
+
+      <p>
+        I hope you know that you don't have to be cheerful,
+        reply quickly, or pretend you're feeling better than you are.
+        Take the time you need. Rest, keep water nearby,
+        and let the people around you look out for you.
+      </p>
+
+      <p>
+        And when you're feeling like yourself again,
+        I hope you get back to all the things that make you happy:
+        dogs, dancing, football, and all the little moments
+        that make a day feel like yours.
+        Until then, there's no rush.
+        You matter even on the quiet days.
+      </p>
+
+      <p class="signoff">
+        Get well soon, Anuja. The world can wait a little. ♡
+      </p>
+
+      <p class="from">
+        FROM A GRATEFUL FIREND
+      </p>
+
+    </article>
+  </div>
+
+  <!-- TOAST POPUP -->
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <div class="wrap footer-inner">
+
+      <div class="footer-copy">
+        MADE FOR ANUJA, WITH CARE.<br>
+        NO CHECK-INS ARE SENT OR STORED BY THIS PAGE.
+      </div>
+
+      <div class="footer-mark">
+        TEAM ANUJA <span style="color:var(--red)">✦</span> ALWAYS
+      </div>
 
     </div>
-</section>
+  </footer>
 
+  <!-- JAVASCRIPT -->
 
-<!-- RIDDLE -->
+  <script>
 
-<section class="section">
-    <div class="card riddle-card">
+    // Small helpers
 
-        <div class="icon">🧩</div>
-        <h3>A tiny brain break</h3>
+    const $ = (id) => document.getElementById(id);
 
-        <p class="riddle-question" id="riddleQuestion">
-            What has keys but cannot open locks?
-        </p>
+    let toastTimer;
 
-        <button class="btn secondary" id="revealAnswer">
-            Reveal answer
-        </button>
+    function showToast(message) {
 
-        <p class="riddle-answer" id="riddleAnswer"></p>
+      const toast = $('toast');
 
-        <button class="btn primary" id="nextRiddle">
-            Give me another one
-        </button>
+      toast.textContent = message;
+      toast.classList.add('show');
 
-    </div>
-</section>
+      clearTimeout(toastTimer);
 
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2800);
 
-<!-- SECRET NOTE -->
-
-<section class="section">
-    <div class="card secret-card">
-
-        <div class="icon">🔐</div>
-        <h2 class="serif">A little final note</h2>
-
-        <p style="margin:10px auto 22px">
-            One last message before you leave this little corner.
-        </p>
-
-        <button class="btn primary" id="unlockSecret">
-            Open your note
-        </button>
-
-        <div class="secret-message" id="secretMessage">
-            Anuja,
-
-            I hope this little website gave you something
-            to do, something to laugh about,
-            or at least a small distraction.
-
-            Take care of yourself, get proper rest,
-            and don't forget to have some fun
-            even on ordinary days.
-
-            Get well soon!
-
-            — Your friend.
-        </div>
-
-    </div>
-</section>
-
-
-<!-- FINAL -->
-
-<section class="section">
-    <div class="card final-card">
-
-        <div class="icon">🌷</div>
-
-        <h2>Take care,<br><em>Anuja!</em></h2>
-
-        <p>
-            I hope you feel better soon.
-            Here's to more laughter, better days,
-            good shows and fewer boring sick days.
-        </p>
-
-        <p class="handwritten" style="font-size:29px;color:#b77b6d">
-            Have a good one! ☀️
-        </p>
-
-    </div>
-</section>
-
-
-<footer>
-    <div class="heart">♡</div>
-    <p>A little website made with thought and creativity.</p>
-    <small>A LITTLE CORNER OF COMFORT · FOR ANUJA</small>
-</footer>
-
-</div>
-
-
-<!-- LETTER MODAL -->
-
-<dialog id="letterDialog">
-
-    <h2>A little note for Anuja</h2>
-
-    <p id="letterContent">Hey Anuja,
-
-I heard you're not feeling too well,
-so I decided to make a little something.
-
-It's a collection of random things:
-some jokes, a little entertainment,
-some games and a few reminders to take care.
-
-Hopefully, you find something here
-that makes your day a little less boring.
-
-No homework, no responsibilities,
-and absolutely no pressure to reply.
-
-Just take it easy and get well soon!
-
-— Your friend.</p>
-
-    <button class="close" id="closeLetter">
-        Close this letter
-    </button>
-
-</dialog>
-
-
-<script>
-
-/* =====================================
-   1. PERSONAL SETTINGS
-===================================== */
-
-const SETTINGS = {
-
-    recipient: "Anuja",
-
-    sender: "Your friend",
-
-    letter: `Hey Anuja,
-
-I heard you're not feeling too well,
-so I decided to make a little something.
-
-It's a collection of random things:
-some jokes, a little entertainment,
-some games and a few reminders to take care.
-
-Hopefully, you find something here
-that makes your day a little less boring.
-
-No homework, no responsibilities,
-and absolutely no pressure to reply.
-
-Just take it easy and get well soon!
-
-— Your friend.`
-
-};
-
-
-/* =====================================
-   2. LETTER
-===================================== */
-
-const dialog = document.getElementById("letterDialog");
-
-document.getElementById("letterContent").textContent =
-    SETTINGS.letter;
-
-document.getElementById("openLetter").onclick = () =>
-    dialog.showModal();
-
-document.getElementById("closeLetter").onclick = () =>
-    dialog.close();
-
-dialog.addEventListener("click", event => {
-    if (event.target === dialog) dialog.close();
-});
-
-
-/* =====================================
-   3. RANDOM ITEM HELPER
-===================================== */
-
-function randomItem(array) {
-    return array[Math.floor(Math.random() * array.length)];
-}
-
-
-/* =====================================
-   4. DAILY REMINDERS
-===================================== */
-
-const dailyMessages = [
-    "You deserve kindness, especially from yourself.",
-    "It's okay if all you accomplish today is resting.",
-    "There is no rush. Good things can wait.",
-    "You deserve a peaceful and happy day.",
-    "May today bring you a little peace and comfort.",
-    "You are allowed to have slow days.",
-    "Here's hoping tomorrow is a little better.",
-    "You don't need to have everything figured out today."
-];
-
-document.getElementById("newReminder").onclick = () => {
-
-    const element = document.getElementById("dailyMessage");
-
-    element.textContent = randomItem(dailyMessages);
-
-    element.classList.remove("fade");
-    void element.offsetWidth;
-    element.classList.add("fade");
-
-};
-
-
-/* =====================================
-   5. FLOWER GARDEN
-===================================== */
-
-const flowerMessages = [
-    "A flower for a person who deserves lovely things. 🌷",
-    "I hope your day is as bright as this flower. 🌼",
-    "You deserve a field full of sunshine. 🌻",
-    "A little flower and a little reminder to take care. 🌸",
-    "Sending you a garden of good wishes. 🌺"
-];
-
-document.querySelectorAll(".flower").forEach(button => {
-
-    button.onclick = () => {
-
-        const index = Number(button.dataset.flower);
-
-        document.getElementById("flowerMessage").textContent =
-            flowerMessages[index];
-
-    };
-
-});
-
-
-/* =====================================
-   6. COMFORT MENU
-===================================== */
-
-const comfort = {
-
-    smile: [
-        "Breaking news: Anuja has officially been assigned a mandatory smile break. ☀️",
-        "If smiles were currency, you'd be ridiculously wealthy.",
-        "A tiny imaginary puppy has been sent to your doorstep. 🐶",
-        "Somewhere, a cat just sneezed. I thought you should know.",
-        "This is your reminder that laughing at silly things is a perfectly valid activity."
-    ],
-
-    care: [
-        "Take things one moment at a time. There's no rush.",
-        "You don't have to be cheerful all the time. It's okay to rest.",
-        "Please remember to drink water and take care of yourself.",
-        "You deserve patience, kindness and a little extra care."
-    ],
-
-    fun: [
-        "Would you rather have a tiny dragon or a tiny dinosaur as a pet?",
-        "Fun fact: Octopuses have three hearts.",
-        "Imagine having a personal penguin that follows you everywhere.",
-        "What if clouds are just the sky's collection of sheep?",
-        "If animals had jobs, what would a giraffe be? A very tall supervisor."
-    ],
-
-    company: [
-        "You don't need to say anything. Sometimes company is enough.",
-        "Hope you know that you're appreciated.",
-        "Whenever you feel like talking, a friend would be happy to listen.",
-        "No pressure to reply to anyone. Just take care of yourself."
-    ]
-
-};
-
-document.querySelectorAll(".comfort-btn").forEach(button => {
-
-    button.onclick = () => {
-
-        const category = button.dataset.type;
-
-        const output = document.getElementById("comfortMessage");
-
-        output.textContent = randomItem(comfort[category]);
-
-        output.classList.remove("fade");
-        void output.offsetWidth;
-        output.classList.add("fade");
-
-    };
-
-});
-
-
-/* =====================================
-   7. BROOKLYN NINE-NINE
-===================================== */
-
-const detectiveRoles = [
-    "Jake Peralta: Chief of making questionable jokes.",
-    "Amy Santiago: Head of organising the entire precinct.",
-    "Captain Holt: Director of maintaining a serious expression.",
-    "Terry Jeffords: Chief of snack operations.",
-    "Rosa Diaz: Head of mysterious investigations.",
-    "Charles Boyle: Director of enthusiastic food reviews."
-];
-
-document.getElementById("assignDetective").onclick = () => {
-
-    document.getElementById("detectiveResult").textContent =
-        randomItem(detectiveRoles);
-
-};
-
-
-/* Original B99-inspired jokes */
-
-const b99Jokes = [
-    "Detective: Where were you at 8 PM? Suspect: Watching TV. Detective: Alibi accepted. That's a respectable evening.",
-
-    "Captain's report: The precinct has run out of coffee. Morale is officially under investigation.",
-
-    "Jake's imaginary productivity report: 10% solving cases, 90% making unnecessary sound effects.",
-
-    "Amy's organisational system has a folder for folders. There is a backup folder for that folder.",
-
-    "Terry has declared all snacks to be protected precinct property.",
-
-    "Rosa has been asked to smile for a group photo. The investigation is ongoing."
-];
-
-document.getElementById("b99Joke").onclick = () => {
-
-    document.getElementById("b99Output").textContent =
-        randomItem(b99Jokes);
-
-};
-
-
-/* Tiny detective case */
-
-const cases = [
-
-    {
-        question: "A cake disappears. Three people were nearby. Jake has frosting on his shirt. What's the first clue?",
-        answer: "The frosting! It's a suspiciously delicious piece of evidence."
-    },
-
-    {
-        question: "A room is locked, but the window is open and there are wet footprints. What's a reasonable first suspicion?",
-        answer: "Someone may have entered or left through the window. Check the footprints!"
-    },
-
-    {
-        question: "Three identical cups are on a table. One has a spoon beside it. What can you confidently conclude?",
-        answer: "Only that someone used a spoon. Detective work means not jumping to conclusions!"
     }
 
-];
 
-document.getElementById("b99Case").onclick = () => {
+    // HERO SURPRISE BUTTON
 
-    const chosen = randomItem(cases);
+    const surprises = [
 
-    document.getElementById("b99Output").textContent =
-        chosen.question + " " + chosen.answer;
+      'BREAKING: The fever has been booked for questioning. Captain Holt is unimpressed.',
 
-};
+      'A puppy has been dispatched. Estimated arrival: immediately, in spirit.',
 
+      'Messi has not personally called, but the number 10 department sends its support.',
 
-/* =====================================
-   8. TEN THINGS SECTION
-===================================== */
+      'The dance floor is saving your spot. No rush. Your health comes first.',
 
-document.querySelectorAll(".ten-item button").forEach(button => {
+      'Amy Santiago has prepared a colour-coded recovery chart. You are not required to complete it.'
 
-    button.onclick = () => {
+    ];
 
-        const item = button.parentElement;
+    $('surpriseBtn').addEventListener('click', () => {
 
-        const open = item.classList.toggle("open");
+      const randomIndex = Math.floor(Math.random() * surprises.length);
 
-        button.setAttribute("aria-expanded", String(open));
+      showToast(surprises[randomIndex]);
 
-    };
-
-});
+    });
 
 
-/* =====================================
-   9. STAR GAME
-===================================== */
+    // PUPPY MESSAGES
 
-const starMessages = [
-    "A little star wishes you a peaceful day. ⭐",
-    "Here's a little sunshine for your day. ☀️",
-    "You deserve all the little joys in life.",
-    "May tomorrow bring something wonderful.",
-    "Here's a tiny reminder to take a break.",
-    "Hope you find something to laugh about today."
-];
+    const puppyMessages = [
 
-document.querySelectorAll(".star").forEach(button => {
+      '“Hello Anuja. I heard you weren\'t feeling well. I have brought absolutely no solutions, only paws.”',
 
-    button.onclick = () => {
+      '“I have inspected your blanket. It passes the comfort test. Please remain cosy.”',
 
-        document.getElementById("starResult").textContent =
-            randomItem(starMessages);
+      '“This is your reminder that you are loved. Also, I would like a treat.”',
 
-    };
+      '“I do not understand fever, but I do understand naps. We can nap together.”',
 
-});
+      '“You do not need to do anything impressive today. Being you is already enough.”',
 
+      '“I have placed one imaginary paw on your to-do list. It is cancelled for today.”',
 
-/* =====================================
-   10. CHECK-IN
-===================================== */
+      '“Sending a tiny nose boop and a very professional tail wag.”',
 
-const feelingMessages = {
+      '“When you feel better, we shall celebrate. For now, I volunteer as blanket supervisor.”'
 
-    better: "A little better today. ☀️",
+    ];
 
-    same: "Taking things slowly today. 🌿",
+    let puppyIndex = 0;
 
-    rough: "Not feeling my best today. ☁️"
+    $('puppyBtn').addEventListener('click', () => {
 
-};
+      puppyIndex = (puppyIndex + 1) % puppyMessages.length;
 
-let selectedFeeling = null;
+      $('dogMessage').textContent = puppyMessages[puppyIndex];
 
-document.querySelectorAll(".feeling").forEach(button => {
+      $('dogCount').textContent =
+        `PUPPY DELIVERY ${String(puppyIndex + 1).padStart(2, '0')} / 08`;
 
-    button.onclick = () => {
-
-        selectedFeeling = button.dataset.feeling;
-
-        document.querySelectorAll(".feeling").forEach(item =>
-            item.classList.remove("active")
-        );
-
-        button.classList.add("active");
-
-        document.getElementById("checkinStatus").textContent =
-            feelingMessages[selectedFeeling];
-
-        document.getElementById("shareCheckin").disabled = false;
-
-        try {
-            localStorage.setItem("anujaCheckin", selectedFeeling);
-        } catch (error) {}
-
-    };
-
-});
+    });
 
 
-/* Restore previous selection */
+    // MESSI / NUMBER 10 MESSAGES
 
-try {
+    const messiBoosts = [
 
-    const saved = localStorage.getItem("anujaCheckin");
+      'Number 10 reminder: the best players know when to slow the game down.',
 
-    if (saved && feelingMessages[saved]) {
+      'A comeback does not need to be rushed. Great things take their own time.',
 
-        selectedFeeling = saved;
+      'Today’s assist: a comfortable pillow, a glass of water, and zero pressure.',
 
-        document.querySelectorAll(".feeling").forEach(button => {
+      'The magic is not going anywhere. Neither are the people cheering for you.'
 
-            if (button.dataset.feeling === saved) {
-                button.classList.add("active");
-            }
+    ];
 
+    $('messiBtn').addEventListener('click', () => {
+
+      const randomIndex = Math.floor(Math.random() * messiBoosts.length);
+
+      $('messiOutput').textContent = messiBoosts[randomIndex];
+
+    });
+
+
+    // BARCELONA BULLETIN
+
+    const barcaNotes = [
+
+      'TEAM NEWS: Anuja is resting. The rest of the squad has been told to hold position.',
+
+      'FORMATION: 4-4-2 blankets. One water bottle. Strong defensive line against unnecessary plans.',
+
+      'MATCH OFFICIALS CONFIRM: Recovery is the priority. The comeback fixture will be announced later.',
+
+      'FAN MESSAGE: The Blaugrana corner is cheering for you. Take your time.'
+
+    ];
+
+    $('barcaBtn').addEventListener('click', () => {
+
+      const randomIndex = Math.floor(Math.random() * barcaNotes.length);
+
+      $('barcaOutput').textContent = barcaNotes[randomIndex];
+
+    });
+
+
+    // DANCE-FLOOR MOOD SELECTOR
+
+    const danceMoods = [
+
+      'FUTURE MOOD: full-on celebration. The floor is yours when you feel ready.',
+
+      'FUTURE MOOD: carefree, no-choreography-needed dancing. Just enjoy the music.',
+
+      'FUTURE MOOD: main-character entrance. Zero rehearsal. Maximum confidence.',
+
+      'FUTURE MOOD: a little living-room concert with your favourite people.'
+
+    ];
+
+    $('danceBtn').addEventListener('click', () => {
+
+      const randomIndex = Math.floor(Math.random() * danceMoods.length);
+
+      $('danceReveal').textContent = danceMoods[randomIndex];
+
+    });
+
+
+    // OPTIONAL MOOD CHECK-IN
+
+    // No data leaves this page.
+
+    document.querySelectorAll('.mood').forEach((button) => {
+
+      button.addEventListener('click', () => {
+
+        document.querySelectorAll('.mood').forEach((item) => {
+          item.classList.remove('active');
         });
 
-        document.getElementById("checkinStatus").textContent =
-            "Your last selection: " + feelingMessages[saved];
+        button.classList.add('active');
 
-        document.getElementById("shareCheckin").disabled = false;
+        $('moodResult').textContent = button.dataset.message;
 
-    }
+        $('moodResult').classList.add('show');
 
-} catch (error) {}
+      });
+
+    });
 
 
-/* =====================================
-   11. SHARE CHECK-IN
-===================================== */
+    // EVIDENCE CARDS
 
-document.getElementById("shareCheckin").onclick = async () => {
+    // Only one evidence card opens at a time.
 
-    if (!selectedFeeling) return;
+    document.querySelectorAll('.evidence').forEach((item) => {
 
-    const message =
-        "Anuja's little check-in:\n\n" +
-        feelingMessages[selectedFeeling];
+      item.addEventListener('click', () => {
 
-    try {
+        const wasOpen = item.classList.contains('open');
 
-        if (navigator.share) {
+        document.querySelectorAll('.evidence').forEach((other) => {
+          other.classList.remove('open');
+        });
 
-            await navigator.share({
-                title: "A little check-in",
-                text: message
-            });
-
-        } else if (navigator.clipboard &&
-                   window.isSecureContext) {
-
-            await navigator.clipboard.writeText(message);
-
-            document.getElementById("checkinStatus").textContent =
-                "Copied! You can now share your update.";
-
-        } else {
-
-            window.prompt("Copy your check-in:", message);
-
+        if (!wasOpen) {
+          item.classList.add('open');
         }
 
-    } catch (error) {
+      });
 
-        if (error.name !== "AbortError") {
-            document.getElementById("checkinStatus").textContent =
-                "Sharing was unavailable. Try again.";
-        }
+    });
+
+
+    // LETTER MODAL CONTROLS
+
+    const modal = $('letterModal');
+
+    function openLetter() {
+
+      modal.classList.add('show');
+
+      $('closeLetter').focus();
 
     }
 
-};
+    function closeLetter() {
 
+      modal.classList.remove('show');
 
-/* =====================================
-   12. WELLNESS CHECKLIST
-===================================== */
+      $('openLetter').focus();
 
-const tasks = document.querySelectorAll(".task");
-
-function updateProgress() {
-
-    const completed =
-        document.querySelectorAll(".task:checked").length;
-
-    const percentage = (completed / tasks.length) * 100;
-
-    document.getElementById("progressFill").style.width =
-        percentage + "%";
-
-    document.getElementById("progressText").textContent =
-        completed + " of " + tasks.length + " little things done.";
-
-}
-
-tasks.forEach(task => {
-    task.addEventListener("change", updateProgress);
-});
-
-
-/* =====================================
-   13. MEMORY CORNER
-===================================== */
-
-document.querySelectorAll(".memory-item button").forEach(button => {
-
-    button.onclick = () => {
-
-        const item = button.parentElement;
-
-        const open = item.classList.toggle("open");
-
-        button.setAttribute("aria-expanded", String(open));
-
-    };
-
-});
-
-
-/* =====================================
-   14. SECRET NOTE
-===================================== */
-
-document.getElementById("unlockSecret").onclick = () => {
-
-    const message = document.getElementById("secretMessage");
-
-    const button = document.getElementById("unlockSecret");
-
-    message.classList.toggle("show");
-
-    button.textContent =
-        message.classList.contains("show")
-        ? "Close your note"
-        : "Open your note";
-
-};
-
-
-/* =====================================
-   15. RIDDLE CORNER
-===================================== */
-
-const riddles = [
-
-    {
-        question:"What has keys but cannot open locks?",
-        answer:"A piano! 🎹"
-    },
-
-    {
-        question:"What gets wetter the more it dries?",
-        answer:"A towel!"
-    },
-
-    {
-        question:"What has a face and two hands but no arms?",
-        answer:"A clock!"
-    },
-
-    {
-        question:"What has many teeth but cannot bite?",
-        answer:"A comb!"
-    },
-
-    {
-        question:"What goes up but never comes down?",
-        answer:"Your age!"
-    },
-
-    {
-        question:"What has a neck but no head?",
-        answer:"A bottle!"
-    },
-
-    {
-        question:"What has one eye but cannot see?",
-        answer:"A needle!"
     }
 
-];
+    $('openLetter').addEventListener('click', openLetter);
 
-let currentRiddle = 0;
-
-function displayRiddle() {
-
-    document.getElementById("riddleQuestion").textContent =
-        riddles[currentRiddle].question;
-
-    document.getElementById("riddleAnswer").textContent = "";
-
-}
-
-document.getElementById("revealAnswer").onclick = () => {
-
-    document.getElementById("riddleAnswer").textContent =
-        riddles[currentRiddle].answer;
-
-};
-
-document.getElementById("nextRiddle").onclick = () => {
-
-    currentRiddle = (currentRiddle + 1) % riddles.length;
-
-    displayRiddle();
-
-};
+    $('closeLetter').addEventListener('click', closeLetter);
 
 
-/* =====================================
-   16. FLOATING PETALS
-===================================== */
+    // CLOSE WHEN CLICKING OUTSIDE THE LETTER
 
-const reducedMotion =
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    modal.addEventListener('click', (event) => {
 
-function createPetal() {
+      if (event.target === modal) {
+        closeLetter();
+      }
 
-    if (reducedMotion) return;
-
-    const petal = document.createElement("div");
-
-    petal.className = "petal";
-
-    petal.textContent = randomItem(["🌸","🌷","✿","♡"]);
-
-    petal.style.left = Math.random() * 100 + "vw";
-
-    const duration = 7 + Math.random() * 7;
-
-    petal.style.animationDuration = duration + "s";
-
-    petal.style.fontSize =
-        (12 + Math.random() * 12) + "px";
-
-    document.body.appendChild(petal);
-
-    setTimeout(() => petal.remove(), duration * 1000);
-
-}
-
-if (!reducedMotion) {
-    setInterval(createPetal, 1800);
-}
+    });
 
 
-/* =====================================
-   17. FINAL CONSOLE MESSAGE
-===================================== */
+    // CLOSE WITH ESCAPE KEY
 
-console.log("A little corner of comfort for Anuja.");
+    document.addEventListener('keydown', (event) => {
 
-</script>
+      if (
+        event.key === 'Escape' &&
+        modal.classList.contains('show')
+      ) {
+        closeLetter();
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>
